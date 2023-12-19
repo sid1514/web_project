@@ -1,0 +1,23 @@
+.aboutus-container{
+    background-color: rgb(4, 2, 21);
+    color:white;
+    padding: 140px;
+    justify-content: space-around;
+}
+.aboutus-container div{
+    margin:40px;
+}
+.title_aboutus{
+    text-decoration: underline;
+    padding:10px;
+}
+.contact_container{
+    background-color: rgb(4, 2, 21);
+    color:white;
+    padding-top: 180px;
+    justify-content: space-around;
+   align-items: center;
+   text-align: center;
+padding-bottom: 50px;
+
+}

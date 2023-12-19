@@ -1,0 +1,14 @@
+.image-slider {
+    display: flex;
+    overflow: hidden;
+    width: 550px; /* Adjust as needed */
+    height: 350px; /* Adjust as needed */
+    
+  }
+  
+  
+  
+  .visible {
+    opacity: 1;
+  }
+  

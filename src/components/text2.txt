@@ -1,0 +1,353 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
+import React from 'react';
+import { Message } from 'semantic-ui-react'
+import { Button, Header, Form, Divider, Segment,Icon,Image} from 'semantic-ui-react'
+import './Login.css';
+
+const Login=()=>{
+  let[flag,Setflag]=useState(true)
+  let[name,Setname]=useState()
+  let[pass,Setpass]=useState()
+  let[Pnumber,setPnumber]=useState()
+  let[Email,setEmail]=useState()
+  let nav=useNavigate()
+  let[msg,Setmsg]=useState(false)
+  let[f,Setf]=useState(true)
+
+
+  let[userLoginFlag,setLoginFlag]=useState(false)
+
+  const handleFlag=()=>{
+    Setflag(!flag)
+  }
+
+
+  const handleSignUp=()=>{
+    let data=({Name:name,Pass:pass,contact:Pnumber,email:Email})
+    data=JSON.stringify(data)
+    localStorage.setItem(name,data)
+    Setflag(!flag)
+    Setmsg(false)
+  }
+
+  const handleSignIn = () => {
+    if (!name || !pass) {
+      
+      Setmsg(true);
+    } else {
+      let data = localStorage.getItem(name, pass);
+      let temp = JSON.parse(data);
+      if (temp) {
+        if (temp.Name === name) {
+          if (temp.Pass === pass) {
+            Setf(!f);
+           sessionStorage.setItem('useloginflag',setLoginFlag(!userLoginFlag));
+            nav('/')
+          } else {
+            Setmsg(true);
+          }
+        }
+      } else {
+        Setmsg(true);
+      }
+    }
+  };
+  
+ return(
+  <>
+<div className='Login-container'>
+  { flag?
+  <div className='log' >
+ 
+        {msg==true?  <Message color='red'>Incorrect Username or Password</Message>: null}
+        <Header as='h1' icon textAlign='center'>
+        <Icon name="car"  iconPosition="right" size='massive' color='blue' />
+        <Header.Content ></Header.Content>
+        </Header>
+        <Form >
+          <Form.Input
+            icon='user'
+            iconPosition='left'
+            label='Username'
+            placeholder='Username'
+            onChange={(e)=>Setname(e.target.value)}
+          />
+          <Form.Input
+            icon='lock'
+            iconPosition='left'
+            label='Password'
+            type='password'
+            onChange={(e)=>Setpass(e.target.value)}
+          />
+
+          <Button color="green" fluid  content='Login' onClick={handleSignIn} />
+          <Divider horizontal>Or</Divider>
+
+<Button
+  color="orange" fluid  content='SignUp' 
+  onClick={handleFlag}
+/>
+        </Form>
+          
+        
+        </div>
+        :
+        <div className='log'>
+        <Segment>
+        <Header as='h1' icon textAlign='center'>
+        <Icon name="users"  iconPosition="right" size='massive' color='blue'  />
+        <Header.Content>SignUp</Header.Content>
+        </Header>
+        <Form>
+          <Form.Input
+            icon='user'
+            iconPosition='left'
+            label='Username'
+            placeholder='Username'
+            onChange={(e)=>Setname(e.target.value)}
+          />
+          <Form.Input
+            icon='lock'
+            iconPosition='left'
+            label='Password'
+            type='password'
+            onChange={(e)=>Setpass(e.target.value)}
+          />
+          <Form.Input 
+            lable='phone number'
+            placeholder="enter a phone number"
+            
+            onChange={(e)=>setPnumber(e.target.value)}
+            />
+            <Form.Input 
+            lable='Email'
+            placeholder="enter a Email"
+            
+            onChange={(e)=>setEmail(e.target.value)}
+            />
+        
+
+<Button color="purple" fluid  content='SignUp' onClick={handleSignUp}/>
+        </Form>
+          
+    </Segment>
+  
+  </div>}
+ 
+
+<span> <h1 style={{'color':'white'}}>"Login to proceed"</h1> </span>
+</div>
+  </>
+ )
+ 
+}
+export default Login;
+
+
+
+
+
+
+
+
+
+<ul >
+        <li><NavLink to='/'>  <h2>Home </h2> </NavLink> </li>
+      
+        <li><NavLink to='/Aboutus' onClick={()=>{setF(!flag)}}> <h2> About US </h2> </NavLink> </li>
+        <li><NavLink to='/Contact'onClick={()=>{setF(!flag)}}> <h2> CONTACT </h2> </NavLink> </li>
+        {LoginFlag?  <li><NavLink to='/UserAc' onClick={()=>{setF(!flag)}}> <h2> <Icon name="user"></Icon>Your account  </h2> </NavLink></li>
+       : <li><NavLink to='/Login' onClick={()=>{setF(!flag)}}> <h2> LOGIN </h2> </NavLink> </li> }2
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {  LoginFlag?
+        <ul >
+        <li><NavLink to='/'>  <h2>Home </h2> </NavLink> </li>
+      
+        <li><NavLink to='/Aboutus' onClick={()=>{setF(!flag)}}> <h2> About US </h2> </NavLink> </li>
+        <li><NavLink to='/Contact'onClick={()=>{setF(!flag)}}> <h2> Contact </h2> </NavLink> </li>
+        <li><NavLink to='/UserAc' onClick={()=>{setF(!flag)}}> <h2> <Icon name="user"></Icon>Your account  </h2> </NavLink></li>
+        </ul>
+          :
+        <ul >
+        <li><NavLink to='/'>  <h2>Home </h2> </NavLink> </li>
+        <li><NavLink to='/Aboutus' onClick={()=>{setF(!flag)}}> <h2> About US </h2> </NavLink> </li>
+        <li><NavLink to='/Contact'onClick={()=>{setF(!flag)}}> <h2> Contact </h2> </NavLink> </li>
+       
+        <li><NavLink to='/Login' onClick={()=>{setF(!flag)}}> <h2> LOGIN </h2> </NavLink> </li> 
+       
+        </ul>
+        }
+
+
+
+
+
+        /////bookedcar.js    
+
+        <div className='main_bookCar'>
+    <div className='bookcar_container'>
+     <h1> Book Your Car </h1>
+       
+      {bookedCar ? (
+        <div className='selected_carContainer'>
+          <div className='bookcar_image'> <img src= {bookedCar.car_image} width={500} height={400}/>  </div>
+          <p style={{fontSize:'20px'}}>{carname=bookedCar.car_brand} {carModel=bookedCar.car_model}</p>
+          <p>Price <Icon name='dollar sign'></Icon> {price=bookedCar.car_price}  {bookedCar.number_of_seats}<Icon name='user'></Icon></p>
+          
+        </div>
+      ) : (
+        <p>No car selected.</p>
+      )}
+    { bookedCar? <div className='cars_details'>
+     <h4> details </h4>
+        <p>Make: <h5>{bookedCar.car_brand} </h5></p>
+        <p> color:<h5>{bookedCar.color}</h5> </p>
+        <p> Model:<h5>{bookedCar.car_model}</h5>  </p>
+        <p> Drive Type: <h5>{bookedCar.Drive_Type} <Icon name='life ring'></Icon></h5> </p>
+        <p>transmission:<h5>{bookedCar.transmission} <Icon name='cogs'></Icon></h5>  </p>
+        <p>year:<h5> {bookedCar.year} </h5></p>
+        <p>Fuel Type:<h5>{bookedCar.fuel_type}<Icon name='fuel'></Icon></h5>  </p>
+        <p> Engine Size:<h5> {bookedCar.Engine_size} </h5> </p>
+        <p>Doors:<h5>{bookedCar.doors}</h5>  </p>
+        <p>Cylinder: <h5>{bookedCar.cylinder}</h5> </p> 
+       
+      </div> :null}
+      <div style={{color:'black',padding:10,paddingLeft:20}}>
+        <h1>Features for your car</h1>
+        <div >
+          <table>
+            <tr><td>Power Steering {featureFlag?(<Icon name='check'></Icon>):(<Icon name='x'></Icon>)}</td> <td>Power Windows Front {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td></tr>
+            <tr><td>Anti Lock Braking System {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td> <td>Air Conditioner {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td></tr>
+            <tr><td>Driver Airbag {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td> <td>Passenger AirBag {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td></tr>
+            <tr><td>Fog Light-Font {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td> <td>Alloy Wheels {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td></tr>
+             <tr><td>Multi-function Steering Wheel {featureFlag?<Icon name='check'></Icon>:<Icon name='x'></Icon>}</td> </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div className='payment_details'>
+     <div className='seg_pay'>
+
+          <h1>{carname} {carModel}</h1>
+          <p><h3 className='fakeprice'>{price+1000}$</h3><h1 style={{color:'red'}}> {price} $</h1></p>
+          
+          <button className="book_button" onClick={handleBookButton}>BOOK YOUR TEST DRIVE NOW</button>
+     </div>
+     
+          <div className='seg_pay'>
+          {bookFlag?  <h3>contact below for booking </h3> :null}
+           
+          <h2 style={{color:'black'}}>contacts us</h2>
+          <p style={{color:'black'}}><Icon name='phone'></Icon> (555) 555-5555</p>
+        <a href="https://api.whatsapp.com/send/?phone=1233456789&text&type=phone_number&app_absent=0">
+           <h3  style={{color:'green'}}><Icon name='whatsapp' size='large' > chat via whatsapp </Icon></h3> </a>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <p><h5>share: </h5> <a href='https://www.facebook.com/login/'><Icon name='facebook' size='large'></Icon></a> <Icon name='twitter' size='large'></Icon></p>
+          </div></div>
+    </div>
+      
+    </>
+  );
+};
+
+export default BookCar;
+
+
+
+
+
+/* try {
+     const userid=LoginUserData[0].userid;
+     const response = await axios.post('http://localhost:4000/BookedCar', {
+       userid,
+       car_brand:car_brand,
+   car_model:car_model,
+     car_price:car_price,
+   car_image:car_image,
+    number_of_seats:number_of_seats,
+   Drive_Type:Drive_Type,
+   transmission:transmission,
+   year:year,
+   fuel_type:fuel_type,
+   Engine_size:Engine_size,
+   doors:doors,
+   cylinder:cylinder,
+   color:color
+     });
+ 
+     console.log('Updated user:', response.data);
+   } catch (error) {
+     console.error('Error updating favorite cars:', error);
+   }
+  
+   // Store car details in local storage
+   */
+
+
+
+     userid:userid,
+          car_brand:car_brand,
+          car_model:car_model,
+          car_price:car_price,  
+          car_image:car_image,  
+          number_of_seats:number_of_seats,  
+          Drive_Type:Drive_Type,  
+          transmission:transmission, 
+          year:year,
+          fuel_type:fuel_type,
+          Engine_size:Engine_size,
+          doors:doors,
+          cylinder:cylinder,
+          color:color
+
+
+
+
+          { 
+                  
+                  BookedCars? 
+                  <div className='bookedCar_Container'>
+
+                  <h1>your booked cars</h1>
+                  <h1 style={{color:'white'}}> {bookedCarDetails.car_brand}</h1>
+                  { 
+                  bookedCarDetails.length > 0 ?(
+                    bookedCarDetails.map((car) => (
+                    <CarCard
+                    key={car.car_brand + car.car_model}
+                    car_image={car.car_image}
+                    car_brand={car.car_brand}
+                    car_model={car.car_model}
+                    car_price={car.car_price}
+                    number_of_seats={car.number_of_seats}
+                    Drive_Type={car.Drive_Type} transmission={car.transmission} year={car.year} fuel_type={car.fuel_type} doors={car.doors} Engine_size={car.Engine_size} cylinder={car.cylinder} color={car.color} 
+                    />
+                      ))
+                  ):<h2>"No booked car here"</h2>
+                      
+                    }
+                  
+                  </div>
+                  :null
+                  
+                  }

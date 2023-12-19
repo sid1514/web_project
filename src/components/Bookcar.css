@@ -1,0 +1,73 @@
+
+.selected_carContainer{
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    width:max-content;
+    height:max-content;
+    border:1px inset grey;
+    border-radius: 5px;
+}
+
+.main_bookCar{
+    color:rgb(146, 34, 34);
+    display :flex;
+   font-family:Arial, Helvetica, sans-serif;
+    padding-bottom: 10;
+    background-color: aliceblue;
+    padding-left:150px;
+    padding-top: 200px;
+    padding-bottom: 70px;
+}
+
+.bookcar_image{
+    box-shadow: 2px 2px grey;
+}
+
+.payment_details{
+    padding-left: 345px;
+    color:black;
+    
+   
+    top:60;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cars_details{
+    color:black;
+    background-color: rgba(0, 0, 0, 0.119);
+    padding-left: 20px;
+    padding-bottom: 10px;
+    
+    justify-content: 20px space-around;
+}
+.card_team{
+    background-color: rgba(45, 40, 40, 0.879);
+   
+    padding:20px;
+    justify-content: space-around;
+    width:300px;
+}
+.team_container{
+    display: flex;
+}
+.book_button{
+    background-color: orange;
+    color: aliceblue;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.fakeprice{
+    text-decoration:line-through;
+}
+.seg_pay{
+    width:300px;
+    margin:20px;
+    padding-bottom: 90px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    padding: 20px;
+    align-items: center;
+}
+

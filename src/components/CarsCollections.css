@@ -1,0 +1,60 @@
+.add_container{
+   
+    color:white;
+      justify-content: space-around;
+      padding:20px;
+      
+  }
+  .add_container Input{
+      margin:10px;
+  }
+  .add_container label{
+      margin:10px;
+  }
+  .Input_container{
+      margin:10px;
+      padding:10px;
+      justify-content: space-around;
+  }
+  .dropdwon_container{
+      justify-content: space-around;
+      height: max-content;
+  }
+ 
+
+  .main_sales{
+ 
+    background-repeat: no-repeat;
+     background-size:contain;
+    padding-left:30px;
+     
+    height:max-content;
+     padding-top: 180px;
+     color:white;
+     }
+
+     .add_button{
+        width:100px;
+        height:50px;
+     }
+
+     
+
+     .carsTable_container table {
+        border: 2px solid rgb(255, 255, 255);
+        height: max-content;
+    }
+     
+    .carsTable_container th {
+        border-bottom: 1px solid rgb(255, 255, 255);
+        border-left:1px solid rgb(255, 255, 255);
+        text-align: center;
+        color: aqua;
+    }
+     
+    .carsTable_container td {
+        text-align: center;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        border-left:1px solid rgb(255, 255, 255);
+        padding: 5px;
+    }

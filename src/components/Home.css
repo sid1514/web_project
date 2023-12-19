@@ -1,0 +1,109 @@
+
+.Home{
+    padding-top:350px;
+    padding-left:20px;
+    color:rgb(33, 185, 193);
+    background-image:url('/public/bg_1.jpg') ;
+    background-repeat: no-repeat;
+   font-size: 20px;
+   font-weight: 500;
+    background-size:100% 100% ;
+   background-color: rgb(255, 255, 255);
+    text-align: left;  
+    display: flex;
+  
+}
+.headline{
+   
+    text-align: left;
+    color:aqua;
+  width:max-content;
+ 
+}
+
+
+
+.info-container{
+   
+    border-radius: 3px;
+    color:rgb(245, 245, 245);
+    text-align:"left";
+    width:50%;
+    padding-bottom: 140px;
+   font-weight: 600;
+   margin-left:10px ;
+   text-shadow: 1px 1px rgb(12, 0, 0);
+}
+.info-container :hover {
+    background-color: rgba(0, 0, 0, 0.478);
+}
+.search-container{
+    width:700;
+    margin-left: 20px;
+ display: flex;  
+   padding-bottom:20px;
+   justify-content: space-around;
+  }
+  .search-container :hover{
+    background-color: rgba(0, 0, 0, 0.199);
+  }
+ .select-container{
+    color:rgba(9, 48, 48, 0.435);
+   
+    width:200px;
+    height:40px;
+    font-size: medium;
+    margin: 20px;
+   padding:20px
+ }
+
+.price_dropdown{
+    width:280px;
+    height:100px;
+    font-size: medium;
+    margin: 20px;
+    padding:20px;
+    display:flex;
+    justify-content: space-between;
+  
+}
+
+#search_button{
+    margin-left: 37px;
+    width:100px;
+    height:50px;
+}
+
+.footer_container{
+    padding-bottom: 80px;
+   
+    display :flex;
+    color:rgb(254, 254, 255);
+    justify-content: space-around;
+    
+    padding-left: 15px;
+    margin-bottom:90px;
+   align-items: center;
+   align-self: baseline;
+   padding-top: 100px;
+}
+
+.footer-d1{
+    margin:10px;
+    padding-top:15px;
+    padding-left: 20px;
+    
+}
+
+.whyBuyContainer{
+    display: flex;
+    color:'white';
+    padding:10px;
+    
+}
+.whyBuyContainer div{
+    width:50%;
+    padding:20px;
+   
+}
+

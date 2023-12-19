@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  color:aliceblue;
+}
+
+.main-nav{
+  width: 100%;
+  height: 6rem;
+  display: grid;
+  grid-template-columns: 8rem 1fr 2fr 1fr 10rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+background-size: 100% 100%;
+background-color:rgba(14, 9, 60, 0.136) ;
+filter:grayscale(50%);
+position:fixed;
+top:0;
+}
+.logo {
+  display: grid;
+  /* background-color: #3b5998; */
+  grid-column: 2/3;
+  justify-content: start;
+  box-shadow: 0px 3px 60px rgba(33, 11, 120, 0.318);
+  width: 160px;
+  border-radius: 20%;
+}
+.navbar_container{
+  grid-column: 3/4;
+  
+ 
+}
+.navbar_container ul{
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+  padding-top:20px;
+  
+}
+ 
+.navbar_container ul li {
+  font-size:20px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ 
+}
+.navbar_container ul li h2{
+  color:rgb(249, 249, 249);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-shadow: 2px -1px rgba(27, 2, 2, 0.711);
+  position:fixed;
+}
+
+ .navbar_container ul li :hover  {
+  transform-origin: left;
+  color: rgba(17, 161, 161, 0.931);
+  text-shadow: 3px 2px black;
+  text-decoration:1px underline;
+ 
+  transition: 0.5s;
+}
+
+  
+
+ @media (max-width: 998px) {
+  .main-nav {
+    height: 7rem;
+    grid-template-columns: 2rem 2fr 3fr 2rem 2rem;
+  }
+
+  .navbar_container{
+    display: none;
+  }
+  .mobile-menu-link {
+    grid-column: 2/4;
+    position: relative;
+    z-index: 99;
+  }
+  .mobile-menu-link {
+    background-color: rgba(32, 3, 3, 0.714);
+    height: 20rem;
+    display: grid;
+    grid-column: 2/5;
+    align-items: center;
+    padding-left: 3rem;
+    transition: all 2s linear;
+    transform-origin: top;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .mobile-menu-link ul {
+    height: 20rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .mobile-menu-link ul li:first-child {
+    transition-delay: 0.2s;
+  }
+ }
+
+ .hidden {
+  display: none;
+}

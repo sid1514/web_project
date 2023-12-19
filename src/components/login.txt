@@ -1,0 +1,83 @@
+import React from "react";
+
+import { NavLink } from "react-router-dom";
+import { useState,useEffect } from "react";
+import './Nav.css';
+import { Icon } from "semantic-ui-react";
+import Routing from "../Routing";
+import Home from "./Home";
+import Aboutus from "./Aboutus";
+import Contact from "./Contact";
+import { GiHamburgerMenu } from "react-icons/gi";
+
+function NavBar(){
+  const [navbarIcon, setNavbarIcon] = useState(false);
+   const [flag,setF]=useState(true) ;
+   const [LoginFlag,setLoginFlag]=useState(sessionStorage.getItem("logintoken"))
+   
+
+
+    return(<>
+    <nav  className="main-nav">
+
+    <div className="logo">
+          <h3>
+          <img src="logo_2.png" className="logo" width={180} height={130}/> 
+           
+          </h3>
+        </div>
+        <div className={
+            navbarIcon ? "menu-link mobile-menu-link" : "navbar_container"
+          }>
+          
+       
+        <ul >
+        <li><NavLink to='/'>  <h2>Home </h2> </NavLink> </li>
+       <li><NavLink to='/Aboutus' onClick={()=>{setF(!flag)}}> <h2> About US </h2> </NavLink> </li>
+        <li><NavLink to='/Contact'onClick={()=>{setF(!flag)}}> <h2> Contact </h2> </NavLink> </li>
+        <li><NavLink to={LoginFlag==null?'/Login':'/UserAc'} onClick={()=>{setF(!flag)}}> { LoginFlag?<h2> <Icon name="user"></Icon>Your account  </h2>: <h2>Login</h2>} </NavLink></li>
+        </ul>
+       
+        </div> 
+        <div className="hamburger-menu">
+            <a href="#" onClick={() => setNavbarIcon(!navbarIcon)}>
+              <GiHamburgerMenu />
+            </a>
+        </div>
+        <br></br>
+        </nav>
+        
+   
+
+    car_brand:car_brand,
+          car_model:car_model,
+          car_price:car_price,
+          car_image:car_image,
+          number_of_seats:number_of_seats,
+          Drive_Type:Drive_Type,
+          transmission:transmission,
+          year:year,
+          fuel_type:fuel_type,
+          Engine_size:Engine_size,
+          doors:doors,
+          cylinder:cylinder,
+          color:color
+ 
+  const car_brand= selectCar[0].car_brand
+
+  const car_model=selectCar[0].car_model
+
+  const car_price=selectCar[0].car_price 
+  const car_image=selectCar[0].car_image
+  const number_of_seats=selectCar[0].number_of_seats 
+  const Drive_Type=selectCar[0].Drive_Type 
+  const transmission=selectCar[0].transmission 
+  const year=selectCar[0].year
+  const fuel_type=selectCar[0].fuel_type
+  const Engine_size=selectCar[0].Engine_size
+  const doors=selectCar[0].doors
+  const cylinder=selectCar[0].cylinder
+  const color=selectCar[0].color 
+    </>)
+}
+export default NavBar;

@@ -1,0 +1,80 @@
+
+
+.carcard_container{
+  
+    margin:20px;
+   
+   transition: transform 0.3s;
+    
+  }
+  .carcard_container:hover{
+    transform: scale(1.10);
+  }
+
+.cars-container{
+    background-color:rgb(4, 2, 21);
+    box-shadow: 2px -5px rgba(17, 0, 0, 0.646);
+}
+
+.featured-container{
+    display: flex;
+    flex-wrap: wrap;
+     margin:10px;
+     padding:20px;
+     text-align:center ;
+    
+     height:auto;
+     width:auto;
+     background-color: rgb(4, 2, 21);
+    
+}
+#f-title{
+    color:aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button-container{
+    padding:10px;
+    border: none;
+    display: flex;
+}
+.button-container button{
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px rgba(254, 254, 254, 0.325);
+    color:rgb(245, 245, 245);
+   background-color:  rgb(4, 2, 21);
+}
+.b1:hover{
+    background-color:  rgb(5, 76, 76);
+}
+
+.s_container{
+   padding-left: 300px;
+   
+}
+.b2{
+    width:100px;
+    border-radius: 3px;
+    border: 1px;
+}
+.b2:hover{
+    background-color:  rgb(5, 76, 76);
+}
+
+.searched-container{
+    color:white;
+   padding:40px;
+}
+.addToFavButton{
+ width:30px;
+  height: min-content;
+
+}
+
+.card_button{
+    color: black;
+    width: max-content;
+    height: fit-content;
+    color: black;
+}
