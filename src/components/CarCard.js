@@ -4,18 +4,12 @@ import './car.css';
 
 import { useEffect } from 'react';
 
-
-
 import { useState } from 'react';
 const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,Drive_Type,transmission,year,fuel_type,Engine_size,doors,cylinder,color,handleFavCar,handleCardClick}) => {
  
 
   
   let [owner,setOwner]=useState('1');
-  
-
-  
-
   
   const [featured, setFeatured] = useState(false);
 useEffect(()=>{
@@ -105,6 +99,7 @@ useEffect(()=>{
    
     </div>
     <Button className='addToFavButton' labelPosition='left' onClick={()=>handleFavCar(car_brand)}><Icon name='heart' color='red' size='large'/></Button>
+    
     </div>
 } 
    

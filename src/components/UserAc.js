@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './UserAc.css';
-import { Icon } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 import { json, useNavigate } from 'react-router-dom';
 
 import { useEffect } from 'react';
 import CarCard from './CarCard';
-
+import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { logout } from './LoginSlice';
 import { selectAuth } from "./LoginSlice";
@@ -24,9 +24,11 @@ const UserAc=()=>{
  
    
     useEffect(() => {
-      
-    const userid=user.userid
+      if(isAuthenticated==false){
+        nav('/')
+      }
       try {
+        const userid=user.userid
       
         fetch(`http://localhost:4000/getFavoriteCar/${userid}`)
           .then((res) => res.json())
@@ -99,6 +101,20 @@ const selectedButton=(clickedButton)=>{
           
       }
     }
+
+    const cancelTestDrive=()=>{
+      if(bookedCarDetails){
+        try{
+          const userid=user.userid;
+        axios.post("http://localhost:4000/cancelBookedCar",{
+          userid:userid
+        })}catch(e){
+          console.log(e)
+        }
+      }
+      window.location.reload();
+    }
+
     return(
         <>
         <div className='main_userAc'>
@@ -135,11 +151,11 @@ const selectedButton=(clickedButton)=>{
                     number_of_seats={bookedCarDetails.number_of_seats}
                     Drive_Type={bookedCarDetails.Drive_Type} transmission={bookedCarDetails.transmission} year={bookedCarDetails.year} fuel_type={bookedCarDetails.fuel_type} doors={bookedCarDetails.doors} Engine_size={bookedCarDetails.Engine_size} cylinder={bookedCarDetails.cylinder} color={bookedCarDetails.color} 
                     />
-                      
+                    
                   :<h2>"No booked car here"</h2>
                       
                   }
-                  
+                 {bookedCarDetails? <Button color='red' onClick={cancelTestDrive}> cancel test drive</Button> :null}
                   </div>
                   :null
                   
