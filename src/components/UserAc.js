@@ -64,7 +64,9 @@ const UserAc=()=>{
         console.error('Error fetching booked cars:', error);
       }
     }, []);
-    
+    if(bookedCarDetails==null){
+      setBookedCarDetails(false)
+    }
    
    console.log(bookedCarDetails)
    
