@@ -116,6 +116,7 @@ useEffect(() => {
             icon='lock'
             iconPosition='left'
             label='Password'
+            placeholder='password'
             type='password'
             onChange={(e)=>Setpass(e.target.value)}
           />
@@ -176,7 +177,7 @@ useEffect(() => {
  
 
 
-<span> <h1 style={{'color':'white'}}>"Login to proceed"</h1> </span>
+<span style={{'color':'white',width:"50%",fontSize:"40px",textShadow:'3px 3px grey'}}> <p > <b>Login</b> to proceed and book your test drive</p> </span>
 </div>
 
   </>

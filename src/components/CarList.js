@@ -6,7 +6,7 @@ import { useState } from 'react';
 import WhyFrom from './WhyFrom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import BookCar from './BookCar';
+
 import { selectAuth } from "./LoginSlice";
 import { useSelector } from "react-redux";
 
@@ -98,11 +98,20 @@ const handleFavCar=async(car_brand)=>{
         <button onClick={() => handleCategoryChange('used')} className='b1'>Used Cars</button>
         <button onClick={() => handleCategoryChange('all')}className='b1'>All Cars</button>
         <div className='s_container'> 
-        <Input placeholder='enter car, brand, price' value={searchTerm}
+        <Input placeholder='enter car, brand, price' value={searchTerm} icon='search'
   onChange={handleSearchInput}/>
          <button className='b2'onClick={() => handleCategoryChange('all')} >Search</button>
+
+        
        </div>
-       
+       <aside className='select_brand'>
+         <select className='dropdown_brand'>
+          <option>Ferrari</option>
+          <option> BMW </option>
+          <option> lamborgani </option>
+          <option> Hyundai </option>
+         </select>
+        </aside>
     </div>
    
     <div className='searched-container'>

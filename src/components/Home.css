@@ -1,17 +1,17 @@
 
 .Home{
-    padding-top:350px;
+   
     padding-left:20px;
     color:rgb(33, 185, 193);
-    background-image:url('/public/bg_1.jpg') ;
+    background-image:url('https://cdn.create.vista.com/api/media/small/417052272/stock-video-glowing-neon-line-car-rental-icon-isolated-on-black-background-rent-a-car-sign-key?videoStaticPreview=true&token=') ;
     background-repeat: no-repeat;
    font-size: 20px;
    font-weight: 500;
     background-size:100% 100% ;
    background-color: rgb(255, 255, 255);
     text-align: left;  
-    display: flex;
-  
+   width:90%;
+   
 }
 .headline{
    
@@ -21,22 +21,28 @@
  
 }
 
-
+.select_area{
+    padding-top: 140px;
+    padding-bottom: 80px;
+    float: right;
+  
+}
 
 .info-container{
-   
-    border-radius: 3px;
-    color:rgb(245, 245, 245);
-    text-align:"left";
-    width:50%;
-    padding-bottom: 140px;
-   font-weight: 600;
-   margin-left:10px ;
-   text-shadow: 1px 1px rgb(12, 0, 0);
-}
+    display: flex;
+    color: aliceblue;
+    padding: 10px;
+    padding-top: 160px;
+    padding-bottom: 80px;
+    width: min-content;
+    
+ }
+
 .info-container :hover {
     background-color: rgba(0, 0, 0, 0.478);
 }
+
+  
 .search-container{
     width:700;
     margin-left: 20px;
@@ -57,16 +63,6 @@
    padding:20px
  }
 
-.price_dropdown{
-    width:280px;
-    height:100px;
-    font-size: medium;
-    margin: 20px;
-    padding:20px;
-    display:flex;
-    justify-content: space-between;
-  
-}
 
 #search_button{
     margin-left: 37px;

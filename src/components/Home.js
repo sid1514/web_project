@@ -1,10 +1,10 @@
 
 import'./Home.css';
 import CarList from "./CarList";
-import { useState,useEffect } from 'react';
 
+import {  Icon, Input } from "semantic-ui-react";
 import HomeImageSlider from './ImageSlider';
-import Routing from '../Routing';
+
 import NavBar from './NavBar';
 const Home=()=>{
   
@@ -15,20 +15,24 @@ const Home=()=>{
         <NavBar/>
       
         <div>
+        
+       
+        
         <div className="Home">
-        <HomeImageSlider/>
+        <div className="select_area" >
+          <Input placeholder="type your area" icon='location' size='mini' ></Input>
+         <Icon name="location arrow" size="large" color='teal' onClick={()=>{alert("hello")}} />
+        </div>
         <div  className="info-container">
-        <h1 className="headline" > "Welcome to Turbo Traders" </h1>
-
-
-      <p>
-      "Rev up your dreams with Turbo Trader - Where Every Ride Begins a New Adventure!"
-      </p>
-      <p>
-      Fuel your passion for precision with Turbo Trader. Where every car is a masterpiece, and every deal is turbocharged for your satisfaction.
-
-
-      </p>
+        <span><HomeImageSlider/></span>
+        <span>
+       
+<p style={{width:"500px",paddingLeft:"50px",paddingTop:"100px",fontSize:'50px'}}>
+Rev up your dreams with <b>Turbo Trader !</b>
+</p>
+        </span>
+        
+     
       </div>
       
       </div>

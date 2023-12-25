@@ -10,10 +10,21 @@
   .carcard_container:hover{
     transform: scale(1.10);
   }
-
+  .select_brand{
+    padding-left: 300px;
+    border-radius: 50%;
+   
+   width: min-content;
+   height: min-content;
+  }
+  .dropdown_brand{
+    width:150px;
+    height:54px;
+  }
 .cars-container{
     background-color:rgb(4, 2, 21);
     box-shadow: 2px -5px rgba(17, 0, 0, 0.646);
+    color: aliceblue;
 }
 
 .featured-container{

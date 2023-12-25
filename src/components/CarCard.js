@@ -5,7 +5,7 @@ import './car.css';
 import { useEffect } from 'react';
 
 import { useState } from 'react';
-const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,Drive_Type,transmission,year,fuel_type,Engine_size,doors,cylinder,color,handleFavCar,handleCardClick}) => {
+const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,handleFavCar,handleCardClick}) => {
  
 
   
@@ -51,9 +51,9 @@ useEffect(()=>{
        
         <span style={{display:'flex',justifyContent:'space-between'}}>
 
-<a>
-{number_of_seats} <Icon name='user' />
-</a> <a>  {owner}</a>
+<p><h5> 
+{ number_of_seats } <Icon name='user' />
+  {owner}</h5></p>
 </span>
        
         
@@ -86,10 +86,9 @@ useEffect(()=>{
       </Card.Content>
       <Card.Content extra >
       <span style={{display:'flex',justifyContent:'space-between'}}>
-      <a >
-      {number_of_seats} <Icon name='user' />
-      </a> 
-      <a>{owner}</a>
+      <p><h5> 
+{ number_of_seats } <Icon name='user' />
+  {owner}</h5></p>
       </span>
    
     

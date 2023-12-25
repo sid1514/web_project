@@ -57,7 +57,7 @@ const handleBookButton=async()=>{
        
       {selectCar ? (
         <div className='selected_carContainer'>
-          <div className='bookcar_image'> <img src= {selectCar[0].car_image} width={500} height={400}/>  </div>
+          <div className='bookcar_image'> <img src= {selectCar[0].car_image} />  </div>
           <p style={{fontSize:'20px'}}>{carname=selectCar[0].car_brand} {carModel=selectCar[0].car_model}</p>
           <p>Price <Icon name='dollar sign'></Icon> {price=selectCar[0].car_price}  {selectCar[0].number_of_seats}<Icon name='user'></Icon></p>
           

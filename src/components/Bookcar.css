@@ -38,8 +38,9 @@
     background-color: rgba(0, 0, 0, 0.119);
     padding-left: 20px;
     padding-bottom: 10px;
-    
+    display: flexbox;
     justify-content: 20px space-around;
+   
 }
 .card_team{
     background-color: rgba(45, 40, 40, 0.879);

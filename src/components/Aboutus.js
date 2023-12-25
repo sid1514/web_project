@@ -4,9 +4,9 @@ import {Icon} from "semantic-ui-react";
 import TeamCard from "./TeamCard";
 import { Link } from "react-router-dom";
 const Aboutus=()=>{
-  let teamdata=[{pic:"team_2.jpg",name:"Emily Rees",position:"Customer advisor",email:"emily@TurboTrader.com",phone:"123-456-789"},
-  {pic:"team_1.jpg",name:"George Brown",position:"Customer advisor",email:"George@TurboTrader.com",phone:"123-456-789"},
-  {pic:"team_3.jpg",name:"Jacob Austin",position:"Customer advisor",email:"Jacob@TurboTrader.com",phone:"123-456-789"}
+  let teamdata=[{pic:"https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",name:"Emily Rees",position:"Customer advisor",email:"emily@TurboTrader.com",phone:"123-456-789"},
+  {pic:"https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",name:"George Brown",position:"Customer advisor",email:"George@TurboTrader.com",phone:"123-456-789"},
+  {pic:"https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",name:"Jacob Austin",position:"Customer advisor",email:"Jacob@TurboTrader.com",phone:"123-456-789"}
 
 
 ]

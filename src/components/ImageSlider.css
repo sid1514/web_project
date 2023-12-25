@@ -1,8 +1,10 @@
 .image-slider {
     display: flex;
     overflow: hidden;
-    width: 550px; /* Adjust as needed */
-    height: 350px; /* Adjust as needed */
+    /* Adjust as needed  width: 550px;*/
+    /* Adjust as needed  height: 350px; */
+    width: 600px;
+    height: 500px;
     
   }
   
