@@ -177,7 +177,7 @@ useEffect(() => {
  
 
 
-<span style={{'color':'white',width:"50%",fontSize:"40px",textShadow:'3px 3px grey'}}> <p > <b>Login</b> to proceed and book your test drive</p> </span>
+<span style={{'color':'white',width:"50%",fontSize:"40px"}}> <p > <b>Login</b> to proceed and book your test drive</p> </span>
 </div>
 
   </>

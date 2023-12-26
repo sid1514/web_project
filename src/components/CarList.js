@@ -29,10 +29,14 @@ useEffect(()=>{
 const filterCarsByCategory = (category) => {
   return CarData.filter((car) => {
     if (category === 'featured') {
-      return ['BMW', 'Mercedes-Benz', 'Ferrari','Lamborghini','Bugatti'].includes(car.car_brand);
+      return ['BMW', 'Ford','McLaren','Mercedes-Benz', 'Ferrari','Lamborghini','Bugatti','Volvo'].includes(car.car_brand);
     } else if (category === 'used') {
-      return ['Hyundai', 'Kia', 'Porsche', 'Jaguar','toyota'].includes(car.car_brand);
-    } else {
+      return ['Hyundai', 'Kia', 'Porsche', 'Jaguar','Subaru','toyota'].includes(car.car_brand);
+    } 
+    else if(category === 'upcoming'){
+      return ['Honda', 'Toyota', 'Chevrolet', 'Nissan','Audi','Mazda','Lexus','Tesla'].includes(car.car_brand);
+    }
+    else {
       return true;
     }
   }).filter((car) => {
@@ -96,6 +100,7 @@ const handleFavCar=async(car_brand)=>{
           Featured Cars
         </button>
         <button onClick={() => handleCategoryChange('used')} className='b1'>Used Cars</button>
+        <button onClick={()=>handleCategoryChange('upcoming')} className='b1'> Upcoming </button>
         <button onClick={() => handleCategoryChange('all')}className='b1'>All Cars</button>
         <div className='s_container'> 
         <Input placeholder='enter car, brand, price' value={searchTerm} icon='search'
@@ -118,8 +123,9 @@ const handleFavCar=async(car_brand)=>{
         {searchTerm}
        </div>
     
-       <div className='featured-container'>
-   {filterCarsByCategory(selectedCategory).map((car) => (
+       <div className='featured-container' id='showCar'>
+       <section className='cars_section3'>
+        {filterCarsByCategory(selectedCategory).map((car) => (
      <CarCard
      key={car.car_brand + car.car_model}
      car_image={car.car_image}
@@ -129,10 +135,12 @@ const handleFavCar=async(car_brand)=>{
           number_of_seats={car.number_of_seats}
           Drive_Type={car.Drive_Type} transmission={car.transmission} year={car.year} fuel_type={car.fuel_type} doors={car.doors} Engine_size={car.Engine_size} cylinder={car.cylinder} color={car.color} handleFavCar={handleFavCar}
           handleCardClick={handleCardClick}
+          category={selectedCategory}
           />
           ))}
-
-
+        </section>
+       
+       
 </div>
    
 <div style={{marginTop:'100px',padding:'10px'}}>

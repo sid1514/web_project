@@ -21,13 +21,13 @@
    display: flex;
     justify-content:center;
     align-items: center;
-   background-color: #34497425;
+   background-color: #344974d4;
    box-shadow:3px 3px 3px 3px rgba(3, 5, 39, 0.491);
    border-radius: 6px;
    
   }
   .log :hover{
-    background-color: #3449749b;
+    background-color: #344974a1;
   }
   
   #t1{

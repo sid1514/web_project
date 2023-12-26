@@ -21,7 +21,7 @@ const { isAuthenticated, user } = useSelector(selectAuth);
  
 const [selectCar,setselectCar]=useState(JSON.parse(sessionStorage.getItem("selectedcar")))
 setInterval(function(){
-  if(carname=="Toyota"|| carname=="Honda"){
+  if(carname=="Toyota"|| carname=="Honda" || carname=="kia"){
     setfeatureFlag(true)
   }
 },1000)
@@ -57,7 +57,7 @@ const handleBookButton=async()=>{
        
       {selectCar ? (
         <div className='selected_carContainer'>
-          <div className='bookcar_image'> <img src= {selectCar[0].car_image} />  </div>
+          <div className='bookcar_image'> <img src= {selectCar[0].car_image} width={'530px'}/>  </div>
           <p style={{fontSize:'20px'}}>{carname=selectCar[0].car_brand} {carModel=selectCar[0].car_model}</p>
           <p>Price <Icon name='dollar sign'></Icon> {price=selectCar[0].car_price}  {selectCar[0].number_of_seats}<Icon name='user'></Icon></p>
           
@@ -66,17 +66,17 @@ const handleBookButton=async()=>{
         <p>No car selected.</p>
       )}
     { selectCar? <div className='cars_details'>
-     <h4> details </h4>
-        <p>Make: <h5>{selectCar[0].car_brand} </h5></p>
-        <p> color:<h5>{selectCar[0].color}</h5> </p>
-        <p> Model:<h5>{selectCar[0].car_model}</h5>  </p>
-        <p> Drive Type: <h5>{selectCar[0].Drive_Type} <Icon name='life ring'></Icon></h5> </p>
-        <p>transmission:<h5>{selectCar[0].transmission} <Icon name='cogs'></Icon></h5>  </p>
-        <p>year:<h5> {selectCar[0].year} </h5></p>
-        <p>Fuel Type:<h5>{selectCar[0].fuel_type}<Icon name='fuel'></Icon></h5>  </p>
-        <p> Engine Size:<h5> {selectCar[0].Engine_size} </h5> </p>
-        <p>Doors:<h5>{selectCar[0].doors}</h5>  </p>
-        <p>Cylinder: <h5>{selectCar[0].cylinder}</h5> </p> 
+    <p><h5>Make:   {selectCar[0].car_brand} </h5>
+ <h5>color: {selectCar[0].color}</h5> 
+  <h5>Model: {selectCar[0].car_model}</h5>  
+   <h5>Drive Type: {selectCar[0].Drive_Type} <Icon name='life ring'></Icon></h5> 
+ <h5>transmission: {selectCar[0].transmission} <Icon name='cogs'></Icon></h5>  
+ <h5> year: {selectCar[0].year} </h5>
+<h5>Fuel Type: {selectCar[0].fuel_type}<Icon name='fuel'></Icon></h5>  
+<h5>Engine Size: {selectCar[0].Engine_size} </h5> 
+<h5>Doors: {selectCar[0].doors}</h5>  
+ <h5>Cylinder: {selectCar[0].cylinder}</h5> </p> 
+
        
       </div> :null}
       <div style={{color:'black',padding:10,paddingLeft:20}}>
@@ -102,7 +102,7 @@ const handleBookButton=async()=>{
      </div>
      
           <div className='seg_pay'>
-          {bookFlag?  <h3>contact below for booking </h3> :null}
+          {bookFlag?  <p className='contact_below'>contact below for booking </p> :null}
            
           <h2 style={{color:'black'}}>contacts us</h2>
           <p style={{color:'black'}}><Icon name='phone'></Icon> (555) 555-5555</p>

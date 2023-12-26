@@ -22,7 +22,7 @@
     height:54px;
   }
 .cars-container{
-    background-color:rgb(4, 2, 21);
+    background-color:rgb(10, 11, 31);
     box-shadow: 2px -5px rgba(17, 0, 0, 0.646);
     color: aliceblue;
 }
@@ -36,8 +36,27 @@
     
      height:auto;
      width:auto;
-     background-color: rgb(4, 2, 21);
+     background-color: rgb(255, 255, 255);
     
+}
+
+.cars_section1{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(186, 201, 215);
+    border-bottom: 1px black;
+}
+.cars_section2{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(186, 201, 215);
+    border-bottom: 1px black;
+}
+.cars_section3{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(186, 201, 215);
+    border-bottom: 1px black;
 }
 #f-title{
     color:aliceblue;

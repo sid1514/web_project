@@ -3,14 +3,14 @@
    
     padding-left:20px;
     color:rgb(33, 185, 193);
-    background-image:url('https://cdn.create.vista.com/api/media/small/417052272/stock-video-glowing-neon-line-car-rental-icon-isolated-on-black-background-rent-a-car-sign-key?videoStaticPreview=true&token=') ;
-    background-repeat: no-repeat;
+   
+    
    font-size: 20px;
    font-weight: 500;
     background-size:100% 100% ;
    background-color: rgb(255, 255, 255);
     text-align: left;  
-   width:90%;
+   width:100%;
    
 }
 .headline{
@@ -25,7 +25,12 @@
     padding-top: 140px;
     padding-bottom: 80px;
     float: right;
+   
   
+}
+#select_areaInput{
+    box-shadow:2px 2px 1px 1px rgba(0, 0, 0, 0.364);
+    color: black;
 }
 
 .info-container{
@@ -34,12 +39,13 @@
     padding: 10px;
     padding-top: 160px;
     padding-bottom: 80px;
-    width: min-content;
-    
+    width: 700px;
+    background-color: aliceblue;
+    height: 600px;
  }
 
-.info-container :hover {
-    background-color: rgba(0, 0, 0, 0.478);
+.brand_dropdwon{
+    width:200px;
 }
 
   
@@ -103,3 +109,7 @@
    
 }
 
+.select_car_{
+    color:black;
+    width:300px;
+}

@@ -5,7 +5,7 @@ import './car.css';
 import { useEffect } from 'react';
 
 import { useState } from 'react';
-const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,handleFavCar,handleCardClick}) => {
+const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,handleFavCar,handleCardClick,category}) => {
  
 
   
@@ -14,17 +14,16 @@ const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,handle
   const [featured, setFeatured] = useState(false);
 useEffect(()=>{
   
-  if(car_brand === 'Hyundai' || car_brand === 'Kia' || car_brand === 'Porsche'|| car_brand==='Lamborghini'|| car_brand==='Jaguar' || car_brand==='toyota'){
+  if(category=='used'){
     setOwner('2nd Owner')
-  }else{
+  }else if(category=='featured' && owner!='2nd Owner'){
+    setFeatured(true);
+  }
+  else{
     setOwner('1st Owner')
   }
 })
-  useEffect(() => {
-    if (car_brand === 'Ferrari' || car_brand === 'BMW' || car_brand === 'Mercedes-Benz'|| car_brand==='Lamborghini'|| car_brand==='Bugatti') {
-      setFeatured(true);
-    }
-  }, [car_brand]);
+ 
 
  
   return (
@@ -61,10 +60,12 @@ useEffect(()=>{
 
       <div style={{dsiplay:'flex'}}>
 
-      <Label as='a' color='red' width={30} tag>
-          Featured
+    { category=='upcoming'? <Label as='a' color='green' width={30} tag>
+          upcoming
+         </Label> :  <Label as='a' color='red' width={30} tag>
+          featured
          </Label>
-    
+    }
       </div>
     </Card>
    
