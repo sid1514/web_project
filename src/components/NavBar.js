@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import './Nav.css';
+
 import {  Icon, Dropdown } from "semantic-ui-react";
 import { GiHamburgerMenu } from "react-icons/gi";
 

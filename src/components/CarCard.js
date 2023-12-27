@@ -30,7 +30,7 @@ useEffect(()=>{
     <>
   
      
-  { featured?
+  
   <div >
 
   <div className='carcard_container' onClick={()=>{handleCardClick(car_brand)}}>
@@ -60,48 +60,15 @@ useEffect(()=>{
 
       <div style={{dsiplay:'flex'}}>
 
-    { category=='upcoming'? <Label as='a' color='green' width={30} tag>
-          upcoming
-         </Label> :  <Label as='a' color='red' width={30} tag>
-          featured
-         </Label>
-    }
+     
+    
       </div>
     </Card>
    
     </div>
     <Button className='addToFavButton' labelPosition='left' onClick={()=>handleFavCar(car_brand)}><Icon name='heart' color='red' size='large'/></Button>
-  </div>:
-    <div>
+  </div>
 
-    <div className='carcard_container' onClick={()=>{handleCardClick(car_brand)}}>
-   
-    <Card >
-      <Image src={car_image} wrapped ui={false}  width={200} height={300}/>
-      <Card.Content>
-       <Card.Header>{car_brand}</Card.Header>
-        <Card.Meta>{car_model}</Card.Meta>
-        <Card.Description>
-         price :{car_price} $
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra >
-      <span style={{display:'flex',justifyContent:'space-between'}}>
-      <p><h5> 
-{ number_of_seats } <Icon name='user' />
-  {owner}</h5></p>
-      </span>
-   
-    
-      </Card.Content>
-      
-    </Card>
-   
-    </div>
-    <Button className='addToFavButton' labelPosition='left' onClick={()=>handleFavCar(car_brand)}><Icon name='heart' color='red' size='large'/></Button>
-    
-    </div>
-} 
    
   
   </>

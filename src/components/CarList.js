@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import CarCard from './CarCard';
 import './car.css'
-import { Input} from 'semantic-ui-react';
+import { Input,Dropdown} from 'semantic-ui-react';
 import { useState } from 'react';
 import WhyFrom from './WhyFrom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import Card_Slider from './CardSlider';
 import { selectAuth } from "./LoginSlice";
 import { useSelector } from "react-redux";
 
@@ -19,7 +19,7 @@ const [selectCar,setSelectCar]=useState([])
 const [CarData,setCarData]=useState([])
 const { isAuthenticated, user } = useSelector(selectAuth);
 const [LoginUserData,setLoginUser]=useState(user)
-
+const[categoryFlag,setCategoryFlag]=useState(false)
 useEffect(()=>{
   fetch("http://localhost:4000/getCarsData")
   .then((res) => res.json())
@@ -89,8 +89,43 @@ const handleFavCar=async(car_brand)=>{
   }
     const handleCategoryChange = (category) => {
       setSelectedCategory(category);
+      setCategoryFlag(true)
+
     };
   
+
+    const CarBrands = [
+      {
+        key: 'BMW',
+        value: 'BMW',
+        image: { avatar: true, src: 'https://seeklogo.com/images/B/bmw-logo-248C3D90E6-seeklogo.com.png' },
+      },
+      {
+        key: 'Mercedees',
+        value: 'Mercedees',
+        image: { avatar: true, src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png' },
+      },
+      {
+        key: 'Mclaren',
+     value: 'Mclaren',
+        image: { avatar: true, src: 'https://pngimg.com/d/Mclaren_PNG47.png' },
+      },
+      {
+        key: 'Ferrari',
+     value: 'Ferrari',
+        image: { avatar: true, src: 'https://i.pinimg.com/originals/cd/36/19/cd3619f9e171f176bf0774017147170d.png' },
+      },
+      {
+        key: 'Jaguar',
+        value: 'Jaguar',
+        image: { avatar: true, src: 'https://i.pinimg.com/originals/9b/a4/c2/9ba4c2b21c708bfd2bee16a90ad766aa.jpg' },
+      },
+      {
+        key: 'Lamborgani',
+        value: 'Lamborgani',
+        image: { avatar: true, src: 'https://w7.pngwing.com/pngs/509/1013/png-transparent-lamborghini-aventador-car-logo-lamborghini-emblem-logo-car.png' },
+      },
+    ]
   return (
     <>
    
@@ -102,6 +137,7 @@ const handleFavCar=async(car_brand)=>{
         <button onClick={() => handleCategoryChange('used')} className='b1'>Used Cars</button>
         <button onClick={()=>handleCategoryChange('upcoming')} className='b1'> Upcoming </button>
         <button onClick={() => handleCategoryChange('all')}className='b1'>All Cars</button>
+        <button onClick={() => setCategoryFlag(false)}className='b1'>Resest</button>
         <div className='s_container'> 
         <Input placeholder='enter car, brand, price' value={searchTerm} icon='search'
   onChange={handleSearchInput}/>
@@ -110,21 +146,20 @@ const handleFavCar=async(car_brand)=>{
         
        </div>
        <aside className='select_brand'>
-         <select className='dropdown_brand'>
-          <option>Ferrari</option>
-          <option> BMW </option>
-          <option> lamborgani </option>
-          <option> Hyundai </option>
-         </select>
+       <Dropdown className='brand_dropdwon'
+    placeholder='Select Brand'
+    fluid
+    selection
+    options={CarBrands}
+    
+  />
         </aside>
     </div>
    
     <div className='searched-container'>
         {searchTerm}
        </div>
-    
-       <div className='featured-container' id='showCar'>
-       <section className='cars_section3'>
+    { categoryFlag?   <section className='cars_section3'>
         {filterCarsByCategory(selectedCategory).map((car) => (
      <CarCard
      key={car.car_brand + car.car_model}
@@ -138,8 +173,13 @@ const handleFavCar=async(car_brand)=>{
           category={selectedCategory}
           />
           ))}
-        </section>
+        </section>:null }
+       <div className='featured-container' id='showCar'>
        
+
+        <Card_Slider SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> <br/>
+        <Card_Slider SelectedCategory={'used'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
+        <Card_Slider SelectedCategory={'upcoming'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
        
 </div>
    
