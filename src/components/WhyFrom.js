@@ -10,20 +10,20 @@ const WhyFrom=()=>{
         setDisplayFlag2(!displayFlag2)
     }
     return(<>
-      <h1 style={{color:'white'}}>Why buy from us?</h1>
-  <div className='whyBuyContainer'>
+      <h1 style={{color:'black'}}>Why buy from us?</h1>
+  <div className='whyBuyContainer' style={{color:'black'}}>
       <div className="quality">
 
       
-      <span style={{color:'white'}}>
+      <span >
         <h1>Quality Check</h1>
-        <p style={{color:'white'}}>Dear valued customers,
+        <p style={{color:'black'}}>Dear valued customers,
 
 At Turbo Traders, we are committed to providing you with the highest quality vehicles. To ensure that our cars meet the highest standards, we have implemented a rigorous quality check process. This process involves a thorough inspection of each vehicle before it is made available for sale. Here is an overview of our quality check procedure: <br></br>
 <button style={{border:'none',width:'100px',color:'white',backgroundColor:'#080830'}} onClick={readmore}>know more</button></p>
       </span>
     { displayFlag? <span >
-    <p style={{color:'white'}} > <h4> 1.Exterior Inspection:</h4> 
+    <p style={{color:'black'}} > <h4> 1.Exterior Inspection:</h4> 
 Body panels and paintwork are examined for any signs of damage or imperfections.
 Lights, indicators, and other exterior components are inspected to ensure they are in working order.
 
@@ -44,15 +44,15 @@ This includes assessing acceleration, braking, handling, and overall drivability
       </span>:null}
       </div>
       <div className="warranty">
-        <h1 style={{color:'white'}}>Warranty Assurance</h1>
-        <p style={{color:'white'}}>
+        <h1 style={{color:'black'}}>Warranty Assurance</h1>
+        <p style={{color:'black'}}>
         Dear Valued Customer,
 
 We are pleased to inform you that all purchases made at Turbo Traders come with our exclusive 12th Month Warranty coverage. This warranty is a testament to our commitment to delivering high-quality products and ensuring your satisfaction.<br></br>
 <button style={{border:'none',width:'100px',color:'white',backgroundColor:'#080830'}} onClick={readmore2}>know more</button>
         </p>
      { displayFlag2?<span>
-        <p style={{color:'white'}}>
+        <p style={{color:'black'}}>
       <h3> Warranty Details:</h3> 
 
 <p>Coverage Period: The 12th Month Warranty extends your product's coverage for an additional 12 months beyond the manufacturer's original warranty.</p>

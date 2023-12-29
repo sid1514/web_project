@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 
 const CarList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
+const [errorsearchFlag,seterrorSearchFlag]=useState(false)
   const [selectedCategory, setSelectedCategory] = useState('all');
 const [favoriteCar,setFavCar]=useState([])
 const [selectCar,setSelectCar]=useState([])
@@ -40,11 +40,12 @@ const filterCarsByCategory = (category) => {
       return true;
     }
   }).filter((car) => {
+   
     return (
       car.car_brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
       car.car_model.toLowerCase().includes(searchTerm.toLowerCase()) ||
       car.car_price.toString().includes(searchTerm)
-    );
+    )
   });
 }; 
 let nav=useNavigate()
@@ -86,13 +87,19 @@ const handleFavCar=async(car_brand)=>{
 }
   const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
+   
   }
     const handleCategoryChange = (category) => {
       setSelectedCategory(category);
       setCategoryFlag(true)
 
     };
-  
+    const vehicleType=[
+      { key: '1', text: 'luxury', value: 'luxury' },
+      { key: '2', text: 'sports', value: 'sports' },
+      { key: '3', text: 'sedan', value: 'sedan' },
+      { key: '4', text: 'Hybrid', value: 'Hybrid' },
+    ]
 
     const CarBrands = [
       {
@@ -132,11 +139,11 @@ const handleFavCar=async(car_brand)=>{
   
    <div className='button-container'> 
     <button onClick={() => handleCategoryChange('featured')} className='b1'>
-          Featured Cars
+          Featured 
         </button>
-        <button onClick={() => handleCategoryChange('used')} className='b1'>Used Cars</button>
+        <button onClick={() => handleCategoryChange('used')} className='b1'>Used </button>
         <button onClick={()=>handleCategoryChange('upcoming')} className='b1'> Upcoming </button>
-        <button onClick={() => handleCategoryChange('all')}className='b1'>All Cars</button>
+        <button onClick={() => handleCategoryChange('all')}className='b1'>All </button>
         <button onClick={() => setCategoryFlag(false)}className='b1'>Resest</button>
         <div className='s_container'> 
         <Input placeholder='enter car, brand, price' value={searchTerm} icon='search'
@@ -145,20 +152,27 @@ const handleFavCar=async(car_brand)=>{
 
         
        </div>
-       <aside className='select_brand'>
+       <aside className='select_brand' >
        <Dropdown className='brand_dropdwon'
     placeholder='Select Brand'
     fluid
     selection
     options={CarBrands}
-    
+   onClick={handleSearchInput}
+  />
+
+<Dropdown className='brand_dropdwon'
+    placeholder='Select type'
+    fluid
+    selection
+    options={vehicleType}
+   onClick={handleSearchInput}
   />
         </aside>
     </div>
    
-    <div className='searched-container'>
-        {searchTerm}
-       </div>
+    <span>{searchTerm}</span>
+   
     { categoryFlag?   <section className='cars_section3'>
         {filterCarsByCategory(selectedCategory).map((car) => (
      <CarCard
@@ -177,7 +191,8 @@ const handleFavCar=async(car_brand)=>{
        <div className='featured-container' id='showCar'>
        
 
-        <Card_Slider SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> <br/>
+        <Card_Slider SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> 
+        <br></br>
         <Card_Slider SelectedCategory={'used'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
         <Card_Slider SelectedCategory={'upcoming'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
        

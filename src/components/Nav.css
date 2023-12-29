@@ -29,10 +29,13 @@ li {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 background-size: 100% 100%;
 text-align: right;
-background-color:rgba(1, 1, 8, 0.649) ;
+background-color:rgba(209, 209, 223, 0) ;
 
 position:fixed;
-top:0;
+z-index: 1;
+top:1;
+
+
 }
 
 .navbar_container ul li{
@@ -43,21 +46,24 @@ top:0;
 }
 
 
-.navbar_container ul li h3{
+.navbar_container ul li h2{
   color:white;
+  text-shadow:2px 3px rgba(41, 29, 29, 0.546);
+}
+
+
+._logo{
+  filter: contrast(170);
   
 }
 
-
-
-
 .navbar_container ul li :hover  {
   transform-origin: left;
-  color: rgb(255, 255, 255);
+  
   text-decoration:1px underline; 
   transition: 0.5s;
+  
 }
-
 
  @media (max-width: 998px) {
   .main-nav {

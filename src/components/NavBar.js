@@ -36,20 +36,20 @@ function NavBar() {
     { key: 'Vietnamese', text: 'Vietnamese', value: 'Vietnamese' },
   ]
   return (
-    <nav className="main-nav">
+    <nav className="main-nav" >
       <div className="logo">
+          <img src="TurboTrader.png" className="logo" width={200} height={170} alt="Logo" id="logo_"/>
         
-          <img src="logo_2.png" className="logo" width={180} height={100} alt="Logo" id="logo_"/>
        
       </div>
       <div className={navbarIcon ? "menu-link mobile-menu-link" : "navbar_container"}>
-        <ul>
-          <li><NavLink to='/'><h3>Home</h3></NavLink></li>
-          <li><NavLink to='/Aboutus' onClick={() => { setF(!flag) }}><h3>About US</h3></NavLink></li>
-          <li><NavLink to='/Contact' onClick={() => { setF(!flag) }}><h3>Contact</h3></NavLink></li>
+        <ul className={flag?"ul_nav":"ul_nav2"}>
+          <li><NavLink to='/' ><h2 >Home</h2></NavLink></li>
+          <li><NavLink to='/Aboutus' onClick={() => { setF(false) }}><h2  >About US</h2></NavLink></li>
+          <li><NavLink to='/Contact' onClick={() => { setF(false) }}><h2  >Contact</h2></NavLink></li>
           <li>
-            <NavLink to={isAuthenticated? '/UserAc' : '/Login'} onClick={() => { setF(!flag) }}>
-              {isAuthenticated ? <h3><Icon name="user"></Icon>Your account</h3> : <h3 >Login / Sign up</h3>}
+            <NavLink to={isAuthenticated? '/UserAc' : '/Login'} onClick={() => { setF(false) }}>
+              {isAuthenticated ? <h2  ><Icon name="user"></Icon>Your account</h2> : <h2 >Login / Sign up</h2>}
             </NavLink>
           </li>
          <li>
@@ -67,20 +67,7 @@ function NavBar() {
         </a>
       </div>
       
-      <div style={{padding:'10px',paddingRight:'10px',width:'100px',height:'100px'}}>
-      <Dropdown
      
-    button
-    className='icon'
-    floating
-    labeled
-    icon='world'
-    options={languageOptions}
-    search
-    text='Select Language'
-    
-  />
-      </div>
     </nav>
     
 

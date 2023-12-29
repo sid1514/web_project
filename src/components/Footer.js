@@ -3,7 +3,7 @@ import { Icon } from "semantic-ui-react";
 const Footer=()=>{
     return(
         <>
-<div className="footer_container">
+<div className="footer_container" style={{color:'black'}}>
 <div className="footer-d1">
 <h1> -------------------------</h1> 
 TurboTrade - Your Ultimate Destination for Quality Cars

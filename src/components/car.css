@@ -5,28 +5,30 @@
     margin:20px;
    
    transition: transform 0.3s;
-    
+    box-shadow:3px 3px 3px 3px rgba(2, 1, 1, 0.38) ;
+    width:max-content;
   }
   .carcard_container:hover{
     transform: scale(1.10);
   }
   .select_brand{
-    padding-left: 300px;
+    padding-left: 100px;
     border-radius: 50%;
-   
-   width: min-content;
-   height: min-content;
+   display: flex;
+   width: max-content;
+   height: max-content;
+  
   }
-  .dropdown_brand{
-    width:150px;
-    height:54px;
-  }
+  
 .cars-container{
-    background-color:rgb(10, 11, 31);
+    background-color:rgb(233, 233, 236);
     box-shadow: 2px -5px rgba(17, 0, 0, 0.646);
     color: aliceblue;
 }
-
+.brand_dropdwon{
+    width:150px;
+    height:60px;
+}
 .featured-container{
     display: flex;
     flex-wrap: wrap;
@@ -67,29 +69,34 @@
     padding:10px;
     border: none;
     display: flex;
+    
 }
-.button-container button{
-    border-top: none;
-    border-bottom: none;
-    border-left: 1px rgba(254, 254, 254, 0.325);
-    color:rgb(245, 245, 245);
-   background-color:  rgb(4, 2, 21);
+.b1{
+    border:none;
+    color:rgb(23, 3, 3);
+   background-color:  rgb(233, 233, 241);
+   box-shadow: 3px 3px 3px 3px rgba(92, 80, 80, 0.209) ;
+   width:100px;
+   height: 50px;
+
 }
 .b1:hover{
-    background-color:  rgb(5, 76, 76);
+    background-color:  rgb(5, 41, 76);
+    color: aliceblue;
 }
-
+.b2:hover{
+    background-color:  rgb(5, 41, 76);
+    color: aliceblue;
+}
 .s_container{
    padding-left: 300px;
    
 }
 .b2{
-    width:100px;
+    width:60px;
     border-radius: 3px;
     border: 1px;
-}
-.b2:hover{
-    background-color:  rgb(5, 76, 76);
+    height: 40px;
 }
 
 .searched-container{

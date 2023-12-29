@@ -49,7 +49,7 @@ const Card_Slider =({SelectedCategory,handleCardClick,handleFavCar})=>{
      
        <div className='main-slider-contianer1'>
        {SelectedCategory=='used'?<Label as='a' color='yellow'  style={{height:"40px",width:'120px',margin:'20px'}} tag> <h4>{SelectedCategory}</h4> </Label>: <Label as='a' color={SelectedCategory=='featured'? 'red':'green'}  style={{height:"40px",width:'120px',margin:'20px'}} tag> <h4>{SelectedCategory}</h4> </Label> }
-       <button className="slider-icon-left" onClick={(e)=>handlescrollLeft(e)}> <Icon name='arrow alternate circle left'/></button>
+       <button className="slider-icon-left" onClick={(e)=>handlescrollLeft(e)}> <Icon name='chevron left'  size='large'/></button>
              <div className="slider" style={{scrollLeft:scrollcard}} ref={containerRef}>  
              {
                 filterCarsByCategory(SelectedCategory).map((car) => (
@@ -75,7 +75,7 @@ const Card_Slider =({SelectedCategory,handleCardClick,handleFavCar})=>{
              }
              </div>
              <button className="slider-icon-right" onClick={(e)=>handlescrollRight(e)} > 
-              <Icon name='arrow alternate circle right'/>
+              <Icon name='chevron right' size='large'/>
               </button>
        </div>
        

@@ -6,7 +6,7 @@ import Routing from './Routing';
 
 function App() {
   return (
-    <div className="App" style={{backgroundColor:'black'}}>
+    <div className="App" style={{backgroundColor:'white',margin:'20px'}}>
     <NavBar/>
   
     <Routing/>

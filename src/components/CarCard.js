@@ -38,7 +38,7 @@ useEffect(()=>{
 
    
     <Card >
-      <Image src={car_image} wrapped ui={false}  width={200} height={300}/>
+      <Image src={car_image} wrapped ui={false}  width={250} height={300}/>
       <Card.Content>
        <Card.Header>{car_brand}</Card.Header>
         <Card.Meta>{car_model}</Card.Meta>

@@ -86,3 +86,15 @@
     text-shadow: 2px 2px rgba(109, 97, 97, 0.358);
 
 }
+
+.form_query{
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.094);
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 600px;
+    height: 600px;
+    border-radius: 10%;
+   
+    
+}

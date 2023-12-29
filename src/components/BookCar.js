@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Bookcar.css'
-import {  Icon } from 'semantic-ui-react';
+import {  Icon,Form ,Input,Select,TextArea,Button, Header} from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
 
 import { selectAuth } from "./LoginSlice";
@@ -106,14 +106,59 @@ const handleBookButton=async()=>{
            
           <h2 style={{color:'black'}}>contacts us</h2>
           <p style={{color:'black'}}><Icon name='phone'></Icon> (555) 555-5555</p>
-        <a href="https://api.whatsapp.com/send/?phone=1233456789&text&type=phone_number&app_absent=0">
-           <h3  style={{color:'green'}}><Icon name='whatsapp' size='large' > chat via whatsapp </Icon></h3> </a>
+       <p>
+         <a href="https://api.whatsapp.com/send/?phone=1233456789&text&type=phone_number&app_absent=0">
+           <Icon name='whatsapp' size='big' color='green' /><h3  style={{color:'green'}}> chat via whatsapp </h3> </a></p>
           <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+         
           <p><h5>share: </h5> <a href='https://www.facebook.com/login/'><Icon name='facebook' size='large'></Icon></a> <Icon name='twitter' size='large'></Icon></p>
           </div></div>
+          <div >
+          <Form className='form_query'>
+            <Header><h2>To more enquiry</h2></Header>
+    <Form.Group widths='equal'>
+      <Form.Field
+        id='form-input-control-first-name'
+        control={Input}
+        label='First name'
+        placeholder='First name'
+      />
+      <Form.Field
+        id='form-input-control-last-name'
+        control={Input}
+        label='Last name'
+        placeholder='Last name'
+      />
+    </Form.Group>
+      <br></br>
+      <Form.Group widths='equal'>
+      <Form.Field
+      id='form-input-control-error-email'
+      control={Input}
+      label='Email'
+      placeholder='enter a email'
+      
+    />
+     <Form.Field
+      id='form-input-control-error-email'
+      control={Input}
+      label='Phone'
+      placeholder='enter a Phone number'
+      
+    />
+    </Form.Group>
+    <Form.Field
+      id='form-textarea-control-opinion'
+      control={TextArea}
+      label='Enquery'
+      placeholder='Opinion'
+    />
+    <br></br>
+    
+    <br></br>
+   <Button inverted color='red'>Send</Button>
+  </Form>
+          </div>
     </div>
       
     </>
