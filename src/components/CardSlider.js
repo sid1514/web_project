@@ -7,7 +7,7 @@ const Card_Slider =({SelectedCategory,handleCardClick,handleFavCar})=>{
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
     useEffect(()=>{
-        fetch("http://localhost:4000/getCarsData")
+        fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
         .then((res) => res.json())
         .then((temp) => setCars(temp))
         .catch((e) => console.log(e))

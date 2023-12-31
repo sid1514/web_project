@@ -21,7 +21,7 @@ const { isAuthenticated, user } = useSelector(selectAuth);
 const [LoginUserData,setLoginUser]=useState(user)
 const[categoryFlag,setCategoryFlag]=useState(false)
 useEffect(()=>{
-  fetch("http://localhost:4000/getCarsData")
+  fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
   .then((res) => res.json())
   .then((temp) => setCarData(temp))
   .catch((e) => console.log(e))
@@ -73,7 +73,7 @@ const handleFavCar=async(car_brand)=>{
 
   
   try {
-    const response = await axios.post('http://localhost:4000/favoriteCar', {
+    const response = await axios.post(`${process.env.REACT_APP_cars_key}/favoriteCar`, {
       userid,
       favoriteCar:favoriteCar
     });
@@ -170,7 +170,7 @@ const handleFavCar=async(car_brand)=>{
   />
         </aside>
     </div>
-   
+  
     <span>{searchTerm}</span>
    
     { categoryFlag?   <section className='cars_section3'>

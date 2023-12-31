@@ -24,7 +24,7 @@ let [loginData,setLoginData]=useState([])
 const dispatch=useDispatch()
 useEffect(() => {
   try {
-    fetch("http://localhost:4000/getLoginData")
+    fetch(`${process.env.REACT_APP_cars_key}/getLoginData`)
       .then((res) => res.json())
       .then((temp) => setLoginData(temp))
       .catch((e) => console.log(e));
@@ -51,7 +51,7 @@ useEffect(() => {
     }, -Infinity);
     console.log(max)
     const userid=max+1;
-   axios.post("http://localhost:4000/signUp",{userid,username,userpass,phoneNumber,userEmail})
+   axios.post(`${process.env.REACT_APP_cars_key}/signUp`,{userid,username,userpass,phoneNumber,userEmail})
   
    
     Setflag(!flag)
@@ -61,7 +61,7 @@ useEffect(() => {
 
   const handleSignIn = () =>  {
     if (username !== '' && userpass !== '') {
-      axios.post("http://localhost:4000/signIn", { username, userpass })
+      axios.post(`${process.env.REACT_APP_cars_key}/signIn`, { username, userpass })
         .then((res) => {
           setContain(res);
           console.log(res)
