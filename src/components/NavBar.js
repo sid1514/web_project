@@ -37,11 +37,7 @@ function NavBar() {
   ]
   return (
     <nav className="main-nav" >
-      <div className="logo">
-          <img src="TurboTrader.png" className="logo" width={200} height={170} alt="Logo" id="logo_"/>
-        
-       
-      </div>
+      
       <div className={navbarIcon ? "menu-link mobile-menu-link" : "navbar_container"}>
         <ul className={flag?"ul_nav":"ul_nav2"}>
           <li><NavLink to='/' ><h2 >Home</h2></NavLink></li>

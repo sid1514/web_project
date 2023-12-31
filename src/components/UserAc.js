@@ -199,9 +199,11 @@ const selectedButton=(clickedButton)=>{
                    ( 
                     
                     <div className='user_Info'>
-                    <h3 style={{color:'aqua'}}> <label style={{color:'white',fontSize:'20'}}>Name:</label> {user.username}</h3>
-                    <h3 style={{color:'aqua'}}><label style={{color:'white'}}>Phone Number: </label>{user.phoneNumber}</h3>
-                    <h3 style={{color:'aqua'}}><label style={{color:'white'}}>Email: </label>{user.userEmail}</h3>
+                     <label style={{color:'white',fontSize:'20'}}>Name:</label><h3 style={{color:'white'}}> {user.username}</h3>
+                     <br></br>
+                     <label style={{color:'white'}}>Phone Number: </label><h3 style={{color:'white'}}>{user.phoneNumber}</h3>
+                     <br></br>
+                    <label style={{color:'white'}}>Email: </label><h3 style={{color:'white'}}> {user.userEmail}</h3>
                     </div>
                   )
                     
@@ -219,7 +221,7 @@ const selectedButton=(clickedButton)=>{
         </table>   
         </div>
         <div className='profile_image'>
-        <Icon name='user' size='massive'></Icon>
+        <Icon name='user' size='massive' color='white'></Icon>
         </div>
         </div>
         </>

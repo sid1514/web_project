@@ -1,6 +1,6 @@
 .aboutus-container{
-    background-color: rgb(255, 255, 255);
-    color:rgb(0, 0, 0);
+    background-color: rgb(50, 66, 74);
+    color:rgb(255, 255, 255);
     padding: 140px;
     justify-content: space-around;
 }
@@ -12,12 +12,12 @@
     padding:10px;
 }
 .contact_container{
-    background-color: rgb(255, 255, 255);
-    color:rgb(0, 0, 0);
-    padding-top: 200px;
+    background-color: rgb(50, 66, 74);
+    color:rgb(255, 255, 255);
+    padding-top: 300px;
     justify-content: space-around;
    align-items: center;
    text-align: center;
-padding-bottom: 50px;
+padding-bottom: 150px;
 
 }
