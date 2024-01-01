@@ -1,15 +1,10 @@
 
 
-
-.logo {
-  display: grid;
-  grid-column: 2/3;
-  /* background-color: antiquewhite; */
-  justify-content: start;
-  align-items: center;
+.App{
+ 
+  margin: 20px;
   
 }
-
 
 
 @media (max-width: 520px) {

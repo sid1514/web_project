@@ -1,8 +1,5 @@
 import { Route,Routes} from 'react-router-dom';
-import Footer from './components/Footer';
-
 import Aboutus from './components/Aboutus';
-import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Login from './components/Login';
 import UserAc from './components/UserAc';

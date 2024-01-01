@@ -35,23 +35,23 @@
 }
 
 .info-container{
-    display: flex;
+    display:flex;
     color: aliceblue;
-    padding: 10px;
-    padding-top: 140px;
+
+    padding-top: 20vh;
     margin-top: 0px;
-    padding-bottom: 80px;
-    width: max-content;
-  padding-left: 20px;
+    padding-bottom: 40vh;
+    width: 50vh;
+  padding-left: 12vh;
     height: 100vh;
     border-radius: 10px;
- }
 
-.brand_dropdwon{
-    width:200px;
+ }
+.info-container span{
+    width:60vh;
+   height: 40vh;
 }
 
-  
 .search-container{
     width:700;
     margin-left: 20px;

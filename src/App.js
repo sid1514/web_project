@@ -5,10 +5,14 @@ import NavBar from './components/NavBar';
 import Routing from './Routing';
 
 function App() {
-  return (
-    <div className="App" style={{backgroundColor:'white',margin:'20px'}}>
-    <NavBar/>
+ 
   
+  return (
+    <div className="App" >
+      
+    <NavBar/>
+   
+    
     <Routing/>
     <Footer/>
     </div>
