@@ -21,7 +21,7 @@ const { isAuthenticated, user } = useSelector(selectAuth);
 const [LoginUserData,setLoginUser]=useState(user)
 const[categoryFlag,setCategoryFlag]=useState(false)
 useEffect(()=>{
-  fetch(`https://sid1514.github.io/BackEnd_CarDealer/getCarsData`)
+  fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
   .then((res) => res.json())
   .then((temp) => setCarData(temp))
   .catch((e) => console.log(e))
