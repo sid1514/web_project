@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 const initialState = {
   isAuthenticated: Cookies.get('isAuthenticated') === 'true',
   user: Cookies.get('user') ? JSON.parse(Cookies.get('user')) : null,
+  isNavigating: false,
 };
 
 const LoginSlice= createSlice({
@@ -27,9 +28,12 @@ const LoginSlice= createSlice({
       Cookies.remove('isAuthenticated');
       Cookies.remove('user');
     },
+    setNavigating(state, action) {
+      state.isNavigating = action.payload;
+    },
   },
 });
 
-export const { login, logout } = LoginSlice.actions;
+export const { login, logout,setNavigating } = LoginSlice.actions;
 export const selectAuth = (state) => state.auth;
 export default LoginSlice.reducer;

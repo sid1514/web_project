@@ -4,14 +4,19 @@ import CarList from "./CarList";
 
 import {  Icon, Input } from "semantic-ui-react";
 import HomeImageSlider from './ImageSlider';
-
-
+import { useSelector } from "react-redux";
+import { setNavigating } from './LoginSlice';
+import NavBar from './NavBar';
+import Routing from '../Routing';
+import Footer from './Footer';
 const Home=()=>{
+  const auth = useSelector((state) => state.auth);
 
  
     return(
         <>
-       
+         <NavBar/>
+       { auth.isNavigating ?
         <div style={{margin:'10px'}}>
         
         
@@ -40,9 +45,9 @@ Rev up your dreams with <b style={{fontFamily:'revert-layer',color:'black',backg
       
       <CarList/>
       </div>
-      </div>
-    
-        </>
+      </div> :<Routing/>
+}
+<Footer/> </>
     )
 }
 export default Home;
