@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon,Image,Label,Button } from 'semantic-ui-react';
+import { Card, Icon,Image,Button } from 'semantic-ui-react';
 import './car.css';
 
 import { useEffect } from 'react';

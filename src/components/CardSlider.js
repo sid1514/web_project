@@ -2,7 +2,7 @@ import { Icon, Label } from 'semantic-ui-react';
 import './CardSlider.css';
 import CarCard from './CarCard';
 import { useState,useEffect,useRef } from 'react';
-const Card_Slider =({SelectedCategory,handleCardClick,handleFavCar})=>{
+const CardSliders =({SelectedCategory,handleCardClick,handleFavCar})=>{
     const [Cars,setCars]=useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
@@ -83,4 +83,4 @@ const Card_Slider =({SelectedCategory,handleCardClick,handleFavCar})=>{
     )
 }
 
-export default Card_Slider;
+export default CardSliders;

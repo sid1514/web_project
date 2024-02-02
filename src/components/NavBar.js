@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import './Nav.css';
 
-import {  Icon, Dropdown } from "semantic-ui-react";
+import {  Icon } from "semantic-ui-react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { selectAuth } from "./LoginSlice";
 import { useSelector } from "react-redux";
@@ -17,7 +17,7 @@ function NavBar() {
  }else{
   dispatch(setNavigating(true));
  }
-  const { isAuthenticated, user } = useSelector(selectAuth);
+  const {isAuthenticated,user}  = useSelector(selectAuth);
 
   return (
     <nav className="main-nav" >

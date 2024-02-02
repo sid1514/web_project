@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CollectionCar from './CollectionCar';
+
 import axios from 'axios';
 import React from 'react';
 import { Message } from 'semantic-ui-react'

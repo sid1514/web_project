@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './UserAc.css';
 import { Button, Icon } from 'semantic-ui-react';
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useEffect } from 'react';
 import CarCard from './CarCard';

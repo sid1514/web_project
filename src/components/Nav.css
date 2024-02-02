@@ -42,14 +42,15 @@ padding: 1.5vh;
 }
 
 #title{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgba(250, 250, 250, 0.982);
   border-radius: 20%;
   width:20vh;
   height: 6vh;
  letter-spacing:4px;
- text-shadow: 2px 2px rgba(37, 20, 20, 0.817);
+ text-shadow: 2px 2px 3px rgba(37, 20, 20, 0.817);
 text-align: center;
+font-size:xx-large;
 }
 .navbar_container{
   display: flex;

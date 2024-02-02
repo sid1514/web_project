@@ -6,13 +6,14 @@ import { useState } from 'react';
 import WhyFrom from './WhyFrom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Card_Slider from './CardSlider';
+import CardSliders from './CardSlider';
 import { selectAuth } from "./LoginSlice";
 import { useSelector } from "react-redux";
-
+import { useDispatch } from 'react-redux';
+import { setNavigating } from './LoginSlice';
 const CarList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-const [errorsearchFlag,seterrorSearchFlag]=useState(false)
+
   const [selectedCategory, setSelectedCategory] = useState('all');
 const [favoriteCar,setFavCar]=useState([])
 const [selectCar,setSelectCar]=useState([])
@@ -20,6 +21,7 @@ const [CarData,setCarData]=useState([])
 const { isAuthenticated, user } = useSelector(selectAuth);
 const [LoginUserData,setLoginUser]=useState(user)
 const[categoryFlag,setCategoryFlag]=useState(false)
+
 useEffect(()=>{
   fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
   .then((res) => res.json())
@@ -50,12 +52,13 @@ const filterCarsByCategory = (category) => {
 }; 
 let nav=useNavigate()
  
-
+const dispatch=useDispatch();
 const handleCardClick=(car_brand)=>{
   
   setSelectCar(CarData.filter((c)=>c.car_brand.includes(car_brand)));
  // alert("ok")
  
+ dispatch(setNavigating(true));
  if(selectCar.length>0){
   sessionStorage.setItem("selectedcar",JSON.stringify(selectCar))
   nav('./BookCar')
@@ -191,10 +194,10 @@ const handleFavCar=async(car_brand)=>{
        <div className='featured-container' id='showCar'>
        
 
-        <Card_Slider SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> 
+        <CardSliders SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> 
         <br></br>
-        <Card_Slider SelectedCategory={'used'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
-        <Card_Slider SelectedCategory={'upcoming'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
+        <CardSliders SelectedCategory={'used'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
+        <CardSliders SelectedCategory={'upcoming'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
        
 </div>
    

@@ -1,6 +1,6 @@
-import { Segment } from "semantic-ui-react";
+
 import './Aboutus.css';
-import {Icon} from "semantic-ui-react";
+
 import TeamCard from "./TeamCard";
 import { Link } from "react-router-dom";
 const Aboutus=()=>{
