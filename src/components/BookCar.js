@@ -10,18 +10,19 @@ import { useSelector } from "react-redux";
 const BookCar = ()=>{
   let nav=useNavigate();
  
-let [price,setPrice]=useState(null);
-let[carname,setcarName]=useState();
+
 let [featureFlag,setfeatureFlag]=useState(false)
 const [bookFlag,setBookFlag]=useState(false)
-let[carModel,setCarModel]=useState();
 
-
+let price=null;
+let carModel=null;
+let carname=null;
 const { isAuthenticated, user } = useSelector(selectAuth);
  
 const [selectCar,setselectCar]=useState(JSON.parse(sessionStorage.getItem("selectedcar")))
+
 setInterval(function(){
-  if(carname=="Toyota"|| carname=="Honda" || carname=="kia"){
+  if(carname==="Toyota"|| carname==="Honda" || carname==="kia"){
     setfeatureFlag(true)
   }
 },1000)
@@ -57,7 +58,7 @@ const handleBookButton=async()=>{
        
       {selectCar ? (
         <div className='selected_carContainer'>
-          <div className='bookcar_image'> <img src= {selectCar[0].car_image} width={'530px'}/>  </div>
+          <div className='bookcar_image'> <img src= {selectCar[0].car_image} width={'440vh'} height={'300vh'} alt="book car"/>  </div>
           <p style={{fontSize:'20px'}}>{carname=selectCar[0].car_brand} {carModel=selectCar[0].car_model}</p>
           <p>Price <Icon name='dollar sign'></Icon> {price=selectCar[0].car_price}  {selectCar[0].number_of_seats}<Icon name='user'></Icon></p>
           

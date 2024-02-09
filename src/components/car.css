@@ -24,6 +24,7 @@
     background-color:rgb(233, 233, 236);
     box-shadow: 2px -5px rgba(17, 0, 0, 0.646);
     color: aliceblue;
+    width:220vh;
 }
 .brand_dropdwon{
     width:150px;
@@ -37,7 +38,7 @@
      text-align:center ;
     
      height:auto;
-     width:auto;
+     width:200vh;
      background-color: rgb(255, 255, 255);
     
 }
@@ -47,6 +48,7 @@
     flex-wrap: wrap;
     background-color: rgb(186, 201, 215);
     border-bottom: 1px black;
+    
 }
 .cars_section2{
     display: flex;
@@ -115,3 +117,4 @@
     height: fit-content;
     color: black;
 }
+
