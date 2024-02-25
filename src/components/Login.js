@@ -1,6 +1,5 @@
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
 import React from 'react';
 import { Message } from 'semantic-ui-react'
@@ -8,6 +7,8 @@ import { Button, Header, Form, Divider, Segment,Icon,Image} from 'semantic-ui-re
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { login } from './LoginSlice';
+
+
 const Login=()=>{
   let[flag,Setflag]=useState(true)
   let[username,Setname]=useState()
@@ -16,12 +17,12 @@ const Login=()=>{
   let[userEmail,setEmail]=useState()
   let nav=useNavigate()
   const[msg,Setmsg]=useState(false)
-  let[f,Setf]=useState(true)
- 
-  
+  let[f,Setf]=useState(true) 
   let[contain,setContain]=useState([])
-let [loginData,setLoginData]=useState([])
-const dispatch=useDispatch()
+  let [loginData,setLoginData]=useState([])
+  const dispatch=useDispatch()
+
+
 useEffect(() => {
   try {
     fetch(`${process.env.REACT_APP_cars_key}/getLoginData`)
@@ -29,21 +30,18 @@ useEffect(() => {
       .then((temp) => setLoginData(temp))
       .catch((e) => console.log(e));
   } catch (error) {
-    // Handle other errors (e.g., network issues)
+    
     console.error('Error fetching login data:', error);
   }
 }, []);
-
-
-  
 
   const handleFlag=()=>{
     Setflag(!flag)
   }
   
-  
-  
-  
+  const GoogleLogin=() =>{
+    window.location.href = 'http://localhost:4000/auth/google/callback';
+  }
   
   const handleSignUp=()=>{
     const max = loginData.reduce((maxValue, currentObject) => {
@@ -52,11 +50,8 @@ useEffect(() => {
     console.log(max)
     const userid=max+1;
    axios.post(`${process.env.REACT_APP_cars_key}/signUp`,{userid,username,userpass,phoneNumber,userEmail})
-  
-   
     Setflag(!flag)
-   // Setmsg(false)
-  
+   
   }
 
   const handleSignIn = () =>  {
@@ -95,14 +90,13 @@ useEffect(() => {
  return(
   <>
 <div className='Login-container'>
-  
-{ flag?
-  <div className='log' >
- 
- {msg?<Message color='red'>Incorrect Username or Password</Message>:null} 
+  { flag?
+    <div className='log' >
+    {msg?
+      <Message color='red'>Incorrect Username or Password</Message>:null} 
         <Header as='h1' icon textAlign='center'>
-        <Icon name="car"  iconPosition="right" size='massive' color='blue' />
-        <Header.Content ></Header.Content>
+          <Icon name="car"  iconPosition="right" size='massive' color='blue' />
+          <Header.Content ></Header.Content>
         </Header>
         <Form >
           <Form.Input
@@ -120,21 +114,17 @@ useEffect(() => {
             type='password'
             onChange={(e)=>Setpass(e.target.value)}
           />
-
           <Button color="green" fluid  content='Login' onClick={handleSignIn} />
           <Divider horizontal>Or</Divider>
-
-<Button
-  color="orange" fluid  content='SignUp' 
-  onClick={handleFlag}
-/>
+          <Button color="orange" fluid  content='SignUp' onClick={handleFlag}/>
+          <br></br>
+          <Button className='google-login-btn' onClick={GoogleLogin} ><Icon name='google' color='blue'/>Google Login</Button>
         </Form>
-          
-        
-        </div>
+   
+    </div>
         :
-        <div className='log'>
-        <Segment>
+    <div className='log'>
+      <Segment>
         <Header as='h1' icon textAlign='center'>
         <Icon name="users"  iconPosition="right" size='massive' color='blue'  />
         <Header.Content>SignUp</Header.Content>
@@ -166,19 +156,17 @@ useEffect(() => {
             
             onChange={(e)=>setEmail(e.target.value)}
             />
-        
-
-<Button color="purple" fluid  content='SignUp' onClick={handleSignUp}/>
+          <Button color="purple" fluid  content='SignUp' onClick={handleSignUp}/>
         </Form>
           
-    </Segment>
+      </Segment>
   
-  </div>}
- 
+    </div>}
+    <span style={{'color':'white',width:"50%",fontSize:"40px"}}> 
+       <p > <b>Login</b> to proceed and book your test drive</p> 
+    </span>
 
-
-<span style={{'color':'white',width:"50%",fontSize:"40px"}}> <p > <b>Login</b> to proceed and book your test drive</p> </span>
-</div>
+  </div>
 
   </>
  )

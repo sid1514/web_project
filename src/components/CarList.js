@@ -13,21 +13,22 @@ import { useDispatch } from 'react-redux';
 import { setNavigating } from './LoginSlice';
 const CarList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
   const [selectedCategory, setSelectedCategory] = useState('all');
-const [favoriteCar,setFavCar]=useState([])
-const [selectCar,setSelectCar]=useState([])
-const [CarData,setCarData]=useState([])
-const { isAuthenticated, user } = useSelector(selectAuth);
-const [LoginUserData,setLoginUser]=useState(user)
-const[categoryFlag,setCategoryFlag]=useState(false)
+  const [favoriteCar,setFavCar]=useState([])
+  const [selectCar,setSelectCar]=useState([])
+  const [CarData,setCarData]=useState([])
+  const dispatch=useDispatch();
+  const { isAuthenticated, user } = useSelector(selectAuth);
+  const [LoginUserData,setLoginUser]=useState(user)
+  const[categoryFlag,setCategoryFlag]=useState(false)
+  let nav=useNavigate()
 
-useEffect(()=>{
-  fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
-  .then((res) => res.json())
-  .then((temp) => setCarData(temp))
-  .catch((e) => console.log(e))
-},[])
+  useEffect(()=>{
+    fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
+    .then((res) => res.json())
+    .then((temp) => setCarData(temp))
+    .catch((e) => console.log(e))
+  },[])
 const filterCarsByCategory = (category) => {
   return CarData.filter((car) => {
     if (category === 'featured') {
@@ -42,7 +43,6 @@ const filterCarsByCategory = (category) => {
       return true;
     }
   }).filter((car) => {
-   
     return (
       car.car_brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
       car.car_model.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -50,9 +50,7 @@ const filterCarsByCategory = (category) => {
     )
   });
 }; 
-let nav=useNavigate()
  
-const dispatch=useDispatch();
 const handleCardClick=(car_brand)=>{
   
   setSelectCar(CarData.filter((c)=>c.car_brand.includes(car_brand)));
@@ -90,12 +88,10 @@ const handleFavCar=async(car_brand)=>{
 }
   const handleSearchInput = (event) => {
     setSearchTerm(event.target.value);
-   
-  }
+   }
     const handleCategoryChange = (category) => {
       setSelectedCategory(category);
       setCategoryFlag(true)
-
     };
     const vehicleType=[
       { key: '1', text: 'luxury', value: 'luxury' },
@@ -137,68 +133,58 @@ const handleFavCar=async(car_brand)=>{
       },
     ]
   return (
-    <>
+<>
+<div className='button-container'> 
+  <button onClick={() => handleCategoryChange('featured')} className='b1'>Featured </button>
+  <button onClick={() => handleCategoryChange('used')} className='b1'>Used </button>
+  <button onClick={()=>handleCategoryChange('upcoming')} className='b1'> Upcoming </button>
+  <button onClick={() => handleCategoryChange('all')}className='b1'>All </button>
+  <button onClick={() => setCategoryFlag(false)}className='b1'>Resest</button>
+  <div className='s_container'> 
+    <Input placeholder='enter car, brand, price' value={searchTerm} icon='search'onChange={handleSearchInput}/>
+    <button className='b2'onClick={() => handleCategoryChange('all')} >Search</button>
+  </div>
+  <aside className='select_brand' >
+    <Dropdown className='brand_dropdwon'
+      placeholder='Select Brand'
+      fluid
+      selection
+      options={CarBrands}
+      onClick={handleSearchInput}
+    />
+    <Dropdown className='brand_dropdwon'
+      placeholder='Select type'
+      fluid
+      selection
+      options={vehicleType}
+      onClick={handleSearchInput}
+    />
+  </aside>
+</div>
+<span>{searchTerm}</span>
    
-  
-   <div className='button-container'> 
-    <button onClick={() => handleCategoryChange('featured')} className='b1'>
-          Featured 
-        </button>
-        <button onClick={() => handleCategoryChange('used')} className='b1'>Used </button>
-        <button onClick={()=>handleCategoryChange('upcoming')} className='b1'> Upcoming </button>
-        <button onClick={() => handleCategoryChange('all')}className='b1'>All </button>
-        <button onClick={() => setCategoryFlag(false)}className='b1'>Resest</button>
-        <div className='s_container'> 
-        <Input placeholder='enter car, brand, price' value={searchTerm} icon='search'
-  onChange={handleSearchInput}/>
-         <button className='b2'onClick={() => handleCategoryChange('all')} >Search</button>
-
-        
-       </div>
-       <aside className='select_brand' >
-       <Dropdown className='brand_dropdwon'
-    placeholder='Select Brand'
-    fluid
-    selection
-    options={CarBrands}
-   onClick={handleSearchInput}
+{ categoryFlag?   
+<section className='cars_section3'>
+  {filterCarsByCategory(selectedCategory).map((car) => (
+  <CarCard
+    key={car.car_brand + car.car_model}
+    car_image={car.car_image}
+    car_brand={car.car_brand}
+    car_model={car.car_model}
+    car_price={car.car_price}
+    number_of_seats={car.number_of_seats}
+    Drive_Type={car.Drive_Type} transmission={car.transmission} year={car.year} fuel_type={car.fuel_type} doors={car.doors} Engine_size={car.Engine_size} cylinder={car.cylinder} color={car.color} handleFavCar={handleFavCar}
+    handleCardClick={handleCardClick}
+    category={selectedCategory}
   />
+    ))}
+</section>:null }
 
-<Dropdown className='brand_dropdwon'
-    placeholder='Select type'
-    fluid
-    selection
-    options={vehicleType}
-   onClick={handleSearchInput}
-  />
-        </aside>
-    </div>
-  
-    <span>{searchTerm}</span>
-   
-    { categoryFlag?   <section className='cars_section3'>
-        {filterCarsByCategory(selectedCategory).map((car) => (
-     <CarCard
-     key={car.car_brand + car.car_model}
-     car_image={car.car_image}
-     car_brand={car.car_brand}
-          car_model={car.car_model}
-          car_price={car.car_price}
-          number_of_seats={car.number_of_seats}
-          Drive_Type={car.Drive_Type} transmission={car.transmission} year={car.year} fuel_type={car.fuel_type} doors={car.doors} Engine_size={car.Engine_size} cylinder={car.cylinder} color={car.color} handleFavCar={handleFavCar}
-          handleCardClick={handleCardClick}
-          category={selectedCategory}
-          />
-          ))}
-        </section>:null }
-       <div className='featured-container' id='showCar'>
-       
-
-        <CardSliders SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> 
-        <br></br>
-        <CardSliders SelectedCategory={'used'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
-        <CardSliders SelectedCategory={'upcoming'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
-       
+<div className='featured-container' id='showCar'>
+  <CardSliders SelectedCategory={'featured'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/> 
+  <br></br>
+  <CardSliders SelectedCategory={'used'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>
+  <CardSliders SelectedCategory={'upcoming'} handleCardClick={handleCardClick} handleFavCar={handleFavCar}/>     
 </div>
    
 <div style={{marginTop:'100px',padding:'10px'}}>

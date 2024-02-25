@@ -32,20 +32,15 @@ function NavBar() {
             <NavLink to={isAuthenticated? '/UserAc' : '/Login'} onClick={() => { setF(false) }}>
               {isAuthenticated ? <h2  ><Icon name="user"></Icon>Your account</h2> : <h2 >Login / Sign up</h2>}
             </NavLink>
-          </li>
-        
-          
+          </li>   
         </ul>
         
-       
       </div>
       <div className="hamburger-menu" align='left'>
         <a href="#" onClick={() => setNavbarIcon(!navbarIcon)}>
           <GiHamburgerMenu />
         </a>
-      </div>
-      
-     
+      </div>   
     </nav>
     
 

@@ -12,8 +12,8 @@ const CollectionCar=()=>{
   let [Drive_Type,setDriveType]=useState('Front-wheel drive')
   let [transmission,setTransmission]=useState('Automatic')
   let[ year,setYear]=useState('2023')
-let [fuel_type,setFuelType]=useState('petrol')
- let [Engine_size,setEngineSize]=useState()
+  let [fuel_type,setFuelType]=useState('petrol')
+  let [Engine_size,setEngineSize]=useState()
   let [doors,setDoors]=useState()
   let  [cylinder,setCylinder]=useState()
   let [ color,setColor]=useState()
@@ -73,14 +73,8 @@ let [fuel_type,setFuelType]=useState('petrol')
     
     <div style={{paddingTop:200,paddingLeft:30}}><h1 style={{color:'white'}}>Cars data</h1></div>
     <div className='main_sales'>
-
-
-
- 
-
     <div className='carsTable_container'>
-      
-      <br></br>
+     <br></br>
   
       <table className='cars_table'>
        <th><h4>S.r. no.</h4></th>
@@ -93,7 +87,6 @@ let [fuel_type,setFuelType]=useState('petrol')
       <br></br>
     { 
     
-
      carData.length? carData.map((c,index)=> <tr> 
       <td><h5>{index+1}</h5></td>
     <td> <h5> {c.car_brand}</h5></td>

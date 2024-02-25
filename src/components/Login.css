@@ -53,3 +53,10 @@
     padding-left: 40px;
     padding-bottom: 20px;
   }
+
+
+  .gLogin{
+    color: black;
+    width:20vh;
+    border-radius:20%;
+  }

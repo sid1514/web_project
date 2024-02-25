@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ImageSlider.css'; // Create a CSS file for styling
 
-
-
 const HomeImageSlider = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -23,8 +21,7 @@ const HomeImageSlider = () => {
 
   return (
     <div className='image-slider ' >
-     <img src={slide_image[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
-      
+     <img src={slide_image[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} /> 
     </div>
   );
 };
