@@ -36,9 +36,9 @@ function NavBar() {
         </ul>
         
       </div>
-      <div className="hamburger-menu" align='left'>
+      <div className="hamburger-menu" >
         <a href="#" onClick={() => setNavbarIcon(!navbarIcon)}>
-          <GiHamburgerMenu />
+          <GiHamburgerMenu size={50} />
         </a>
       </div>   
     </nav>

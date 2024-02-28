@@ -1,9 +1,10 @@
 import Home from "./Home";
 import { Icon } from "semantic-ui-react";
+import './Home.css'
 const Footer=()=>{
 return(
 <>
-<div className="footer_container" style={{color:'black'}}>
+<div className="footer_container" >
     <div className="footer-d1">
         <h1> -------------------------</h1> 
         TurboTrade - Your Ultimate Destination for Quality Cars
@@ -17,20 +18,21 @@ return(
         </p>
     </div>
 
-    <div className="footer-d1">
+    <div className="footer-d2">
         Follow Us:
         <p><Icon name="facebook" /></p>
         <p><Icon name="twitter" /> </p>
         <p><Icon name="whatsapp square" /></p>
     </div >
 
-    <div className="footer-d1">
+    <div className="footer-d3">
         Hours of Operation:
         Monday - Friday: 9:00 AM - 7:00 PM
         Saturday: 10:00 AM - 5:00 PM
         Sunday: Closed
     </div>
-    <p>
+    <div className="about_part" >
+    <p >
     About TurboTrade:
     Turbo Trader is a reputable car dealership founded in 2002.
     With a dedication to customer satisfaction, quality assurance, etc., we have become a trusted name in the industry.
@@ -40,6 +42,7 @@ return(
     © 2023 TurboTrade. All rights reserved.
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     </p>
+    </div>
 </div>
  </>
     )

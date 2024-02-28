@@ -81,26 +81,54 @@
 
 .footer_container{
     padding-bottom: 80px;
-  
+  color:black;
     display :flex;
     color:rgb(254, 254, 255);
     justify-content: space-around;
     margin-left: 20px;
-    padding-left: 15px;
+    
     margin-bottom:90px;
    align-items: center;
    align-self: baseline;
-   padding-top: 100px;
-   width:200vh;
+   padding-top: 20px;
+   width:100%;
    height: min-content;
 }
 
 .footer-d1{
     margin:10px;
-    padding-top:15px;
-    padding-left: 20px;
-    width:min-content;
+    
+    color:black;
+    width:20vh;
+    font-size: large;
     height: min-content;
+}
+.footer-d2{
+    margin:10px;
+    
+    color:black;
+    width:10vh;
+    font-size:x-large;
+    height: min-content;
+}
+.footer-d3{
+    margin:10px;
+    padding: 10;
+    color:black;
+    width:20vh;
+    font-size:x-large;
+    height: min-content;
+    line-height: 2;
+}
+
+.about_part{
+    margin:10px;
+    padding: 10;
+    color:black;
+    width:70vh;
+    font-size:x-large;
+    height: min-content;
+    line-height: 2;
 }
 
 .whyBuyContainer{
@@ -126,3 +154,9 @@
    padding-top: 10px;
 }
 
+@media (max-width: 520px) {
+    .footer_container{ 
+     width:200vw;
+     height:120vh;
+    }
+  }  
