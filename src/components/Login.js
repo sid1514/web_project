@@ -7,7 +7,7 @@ import { Button, Header, Form, Divider, Segment,Icon,Image} from 'semantic-ui-re
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { login } from './LoginSlice';
-import GoogleLogin from 'react-google-login';
+
 
 const Login=()=>{
   let[flag,Setflag]=useState(true)
@@ -21,7 +21,7 @@ const Login=()=>{
   let[contain,setContain]=useState([])
   let [loginData,setLoginData]=useState([])
   const dispatch=useDispatch()
-  const [userEmail1, setUserEmail] = useState('');
+ 
 
 useEffect(() => {
   try {
@@ -40,12 +40,7 @@ useEffect(() => {
   }
   
  
-  const responseGoogle = (response) => {
-    console.log(response);
-    // Handle authentication response here
-    const email = response.profileObj.email;
-    setUserEmail(email);
-  };
+  
   const handleSignUp=()=>{
     const max = loginData.reduce((maxValue, currentObject) => {
       return Math.max(maxValue, currentObject.userid);
@@ -122,7 +117,7 @@ useEffect(() => {
           <Button color="orange" fluid  content='SignUp' onClick={handleFlag}/>
           <br></br>
        
-    {userEmail1 && <p>User's email: {userEmail1}</p>}
+   
         </Form>
    
     </div>
