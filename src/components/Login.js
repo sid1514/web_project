@@ -25,7 +25,7 @@ const Login=()=>{
 
 useEffect(() => {
   try {
-    fetch(`${process.env.REACT_APP_cars_key}/getLoginData`)
+    fetch(`http://localhost:3001/getLoginData`)
       .then((res) => res.json())
       .then((temp) => setLoginData(temp))
       .catch((e) => console.log(e));
@@ -47,14 +47,14 @@ useEffect(() => {
     }, -Infinity);
     console.log(max)
     const userid=max+1;
-   axios.post(`${process.env.REACT_APP_cars_key}/signUp`,{userid,username,userpass,phoneNumber,userEmail})
+   axios.post(`http://localhost:3001/signUp`,{userid,username,userpass,phoneNumber,userEmail})
     Setflag(!flag)
    
   }
 
   const handleSignIn = () =>  {
     if (username !== '' && userpass !== '') {
-      axios.post(`${process.env.REACT_APP_cars_key}/signIn`, { username, userpass })
+      axios.post(`http://localhost:3001/signIn`, { username, userpass })
         .then((res) => {
           setContain(res);
           console.log(res)

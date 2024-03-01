@@ -24,7 +24,7 @@ const CarList = () => {
   let nav=useNavigate()
 
   useEffect(()=>{
-    fetch(`${process.env.REACT_APP_cars_key}/getCarsData`)
+    fetch(`http://localhost:3001/getCarsData`)
     .then((res) => res.json())
     .then((temp) => setCarData(temp))
     .catch((e) => console.log(e))

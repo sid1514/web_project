@@ -29,7 +29,7 @@ const UserAc=()=>{
       try {
         const userid=user.userid
       
-        fetch(`${process.env.REACT_APP_cars_key}/getFavoriteCar/${userid}`)
+        fetch(`http://localhost:3001/getFavoriteCar/${userid}`)
           .then((res) => res.json())
           .then((temp) => {
             
@@ -52,7 +52,7 @@ const UserAc=()=>{
     useEffect(() => {
       try {
         const userid=user.userid
-        fetch(`${process.env.REACT_APP_cars_key}/getBookedCar/${userid}`)
+        fetch(`http://localhost:3001/getBookedCar/${userid}`)
           .then((res) => res.json())
           .then((temp) => {setBookedCarDetails(temp) })
           .catch((e) => console.log(e));
@@ -96,7 +96,7 @@ const selectedButton=(clickedButton)=>{
       if(bookedCarDetails){
         try{
           const userid=user.userid;
-        axios.post(`${process.env.REACT_APP_cars_key}/cancelBookedCar`,{
+        axios.post(`http://localhost:3001/cancelBookedCar`,{
           userid:userid
         })}catch(e){
           console.log(e)
