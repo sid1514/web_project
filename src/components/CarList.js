@@ -24,7 +24,7 @@ const CarList = () => {
   let nav=useNavigate()
 
   useEffect(()=>{
-    fetch(`http://localhost:3001/getCarsData`)
+    fetch(`https://turbotraderapi.onrender.com/getCarsData`)
     .then((res) => res.json())
     .then((temp) => setCarData(temp))
     .catch((e) => console.log(e))
@@ -74,7 +74,7 @@ const handleFavCar=async(car_brand)=>{
 
   
   try {
-    const response = await axios.post(`${process.env.REACT_APP_cars_key}/favoriteCar`, {
+    const response = await axios.post(`https://turbotraderapi.onrender.com/favoriteCar`, {
       userid,
       favoriteCar:favoriteCar
     });

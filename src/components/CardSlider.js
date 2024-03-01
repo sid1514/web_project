@@ -7,7 +7,7 @@ const CardSliders =({SelectedCategory,handleCardClick,handleFavCar})=>{
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
     useEffect(()=>{
-        fetch(`http://localhost:3001/getCarsData`)
+        fetch(`https://turbotraderapi.onrender.com/getCarsData`)
         .then((res) => res.json())
         .then((temp) => setCars(temp))
         .catch((e) => console.log(e))

@@ -29,7 +29,7 @@ const UserAc=()=>{
       try {
         const userid=user.userid
       
-        fetch(`http://localhost:3001/getFavoriteCar/${userid}`)
+        fetch(`https://turbotraderapi.onrender.com/getFavoriteCar/${userid}`)
           .then((res) => res.json())
           .then((temp) => {
             
@@ -52,7 +52,7 @@ const UserAc=()=>{
     useEffect(() => {
       try {
         const userid=user.userid
-        fetch(`http://localhost:3001/getBookedCar/${userid}`)
+        fetch(`https://turbotraderapi.onrender.com/getBookedCar/${userid}`)
           .then((res) => res.json())
           .then((temp) => {setBookedCarDetails(temp) })
           .catch((e) => console.log(e));
@@ -96,7 +96,7 @@ const selectedButton=(clickedButton)=>{
       if(bookedCarDetails){
         try{
           const userid=user.userid;
-        axios.post(`http://localhost:3001/cancelBookedCar`,{
+        axios.post(`https://turbotraderapi.onrender.com/cancelBookedCar`,{
           userid:userid
         })}catch(e){
           console.log(e)

@@ -34,7 +34,7 @@ const CollectionCar=()=>{
     setFuelType(e.target.value)
   }
  const handleAddData=()=>{
-    axios.post("http://localhost:4000/postCar",{car_brand,car_model,car_price,car_image,number_of_seats,Drive_Type,transmission,year,fuel_type,Engine_size,doors,cylinder,color})
+    axios.post("https://turbotraderapi.onrender.com/postCar",{car_brand,car_model,car_price,car_image,number_of_seats,Drive_Type,transmission,year,fuel_type,Engine_size,doors,cylinder,color})
   
   }
 
@@ -44,7 +44,7 @@ const CollectionCar=()=>{
  
   const [carData, setCarData] = useState([]);
   useEffect(()=>{
-    fetch("http://localhost:4000/getCarsData")
+    fetch("https://turbotraderapi.onrender.com/getCarsData")
     .then((res)=>res.json())
     .then((temp)=>setCarData(temp))
     .catch((e)=>{console.log(e)})

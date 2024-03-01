@@ -25,7 +25,7 @@ const Login=()=>{
 
 useEffect(() => {
   try {
-    fetch(`http://localhost:3001/getLoginData`)
+    fetch(`https://turbotraderapi.onrender.com/getLoginData`)
       .then((res) => res.json())
       .then((temp) => setLoginData(temp))
       .catch((e) => console.log(e));
@@ -47,14 +47,14 @@ useEffect(() => {
     }, -Infinity);
     console.log(max)
     const userid=max+1;
-   axios.post(`http://localhost:3001/signUp`,{userid,username,userpass,phoneNumber,userEmail})
+   axios.post(`https://turbotraderapi.onrender.com/signUp`,{userid,username,userpass,phoneNumber,userEmail})
     Setflag(!flag)
    
   }
 
   const handleSignIn = () =>  {
     if (username !== '' && userpass !== '') {
-      axios.post(`http://localhost:3001/signIn`, { username, userpass })
+      axios.post(`https://turbotraderapi.onrender.com/signIn`, { username, userpass })
         .then((res) => {
           setContain(res);
           console.log(res)
