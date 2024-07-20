@@ -7,7 +7,7 @@ import { Button, Header, Form, Divider, Segment,Icon,Image} from 'semantic-ui-re
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { login } from './LoginSlice';
-
+import { GoogleLogin } from '@react-oauth/google';
 
 const Login=()=>{
   let[flag,Setflag]=useState(true)
@@ -39,7 +39,14 @@ useEffect(() => {
     Setflag(!flag)
   }
   
- 
+  const [user, setUser] = useState(null);
+  const handleSuccess = (response) => {
+ console.log( response)
+  };
+
+  const handleError = () => {
+    console.log('Login Failed');
+  };
   
   const handleSignUp=()=>{
     const max = loginData.reduce((maxValue, currentObject) => {
@@ -116,7 +123,13 @@ useEffect(() => {
           <Divider horizontal>Or</Divider>
           <Button color="orange" fluid  content='SignUp' onClick={handleFlag}/>
           <br></br>
-       
+          <GoogleLogin
+          clientId="412495318560-oio09u8g8gs1rg2r5a0nesk1bd88gblh.apps.googleusercontent.com"
+          onSuccess={handleSuccess}
+          onError={handleError}
+          cookiePolicy={'single_host_origin'}
+          scope="https://www.googleapis.com/auth/userinfo.profile"
+    />
    
         </Form>
    
@@ -156,6 +169,14 @@ useEffect(() => {
             onChange={(e)=>setEmail(e.target.value)}
             />
           <Button color="purple" fluid  content='SignUp' onClick={handleSignUp}/>
+          <GoogleLogin
+        clientId="412495318560-oio09u8g8gs1rg2r5a0nesk1bd88gblh.apps.googleusercontent.com"
+        onSuccess={handleSuccess}
+        onError={handleError}
+        cookiePolicy={'single_host_origin'}
+        scope="https://www.googleapis.com/auth/userinfo.profile"
+    />
+   
         </Form>
           
       </Segment>
