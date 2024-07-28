@@ -1,163 +1,217 @@
+.Home {
+  padding-left: 20vh;
+  color: rgb(33, 185, 193);
+  font-size: 20px;
+  font-weight: 500;
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: left;
 
-.Home{
-   
-    padding-left:20vh;
-    color:rgb(33, 185, 193);
-    font-size: 20px;
-   font-weight: 500;
-    background-size:100% 100% ;
-   background-color: rgba(255, 255, 255, 0);
-    text-align: left;  
-  
-   height: 90vh;
-   background-image: url("https://www.hdcarwallpapers.com/walls/super_sports_cars-HD.jpg");
-   
-
+  height: 90vh;
+  background-image: url("https://www.hdcarwallpapers.com/walls/super_sports_cars-HD.jpg");
 }
-.headline{
-   
-    text-align: left;
-    color:aqua;
-  width:max-content;
- 
+.headline {
+  text-align: left;
+  color: aqua;
+  width: max-content;
 }
 
-.select_area{
-    padding-top: 100px;
-    padding-bottom: 80px;
-    float: right;
-   padding-right: 40vh;
-  
+.select_area {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  float: right;
+  padding-right: 40vh;
 }
-#select_areaInput{
-    box-shadow:2px 2px 1px 1px rgba(0, 0, 0, 0.364);
-    color: black;
+#select_areaInput {
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.364);
+  color: black;
 }
 
-.info-container{
-    display:flex;
-    color: aliceblue;
+.info-container {
+  display: flex;
+  color: aliceblue;
 
-    padding-top: 20vh;
-    margin-top: 0px;
-    padding-bottom: 40vh;
-    width: 50vh;
+  padding-top: 20vh;
+  margin-top: 0px;
+  padding-bottom: 40vh;
+  width: 50vh;
   padding-left: 12vh;
-    height: 100vh;
-    border-radius: 10px;
-
- }
-.info-container span{
-    width:60vh;
-   height: 40vh;
+  height: 100vh;
+  border-radius: 10px;
+}
+.info-container span {
+  width: 60vh;
+  height: 40vh;
 }
 
-.search-container{
-    width:700;
-    margin-left: 20px;
- display: flex;  
-   padding-bottom:20px;
-   justify-content: space-around;
-  }
-  .search-container :hover{
-    background-color: rgba(0, 0, 0, 0.199);
-  }
- .select-container{
-    color:rgba(9, 48, 48, 0.435);
-   
-    width:200px;
-    height:40px;
-    font-size: medium;
-    margin: 20px;
-   padding:20px
- }
+.search-container {
+  width: 700;
+  margin-left: 20px;
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-around;
+}
+.search-container :hover {
+  background-color: rgba(0, 0, 0, 0.199);
+}
+.select-container {
+  color: rgba(9, 48, 48, 0.435);
 
-
-#search_button{
-    margin-left: 37px;
-    width:100px;
-    height:50px;
+  width: 200px;
+  height: 40px;
+  font-size: medium;
+  margin: 20px;
+  padding: 20px;
 }
 
-.footer_container{
-    padding-bottom: 80px;
-  color:black;
-    display :flex;
-    color:rgb(254, 254, 255);
-    justify-content: space-around;
-    margin-left: 20px;
-    
-    margin-bottom:90px;
-   align-items: center;
-   align-self: baseline;
-   padding-top: 20px;
-   width:100%;
-   height: min-content;
-    font-size: small;
+#search_button {
+  margin-left: 37px;
+  width: 100px;
+  height: 50px;
 }
 
-.footer-d1{
-    margin:10px;
-    
-    color:black;
-    width:20vh;
-   
-    height: min-content;
-}
-.footer-d2{
-    margin:10px;
-    
-    color:black;
-    width:10vh;
-    font-size:x-large;
-    height: min-content;
-}
-.footer-d3{
-    margin:10px;
-    padding: 10;
-    color:black;
-    width:20vh;
-    font-size:large;
-    height: min-content;
-    line-height: 2;
+.footer_container {
+  padding-bottom: 80px;
+  color: black;
+  display: flex;
+  color: rgb(254, 254, 255);
+  justify-content: space-around;
+  margin-left: 20px;
+
+  margin-bottom: 90px;
+  align-items: center;
+  align-self: baseline;
+  padding-top: 20px;
+  width: 100%;
+  height: min-content;
+  font-size: small;
 }
 
-.about_part{
-    margin:10px;
-    padding: 10;
-    color:black;
-    width:70vh;
-    font-size:large;
-    height: min-content;
-    line-height: 2;
+.footer-d1 {
+  margin: 10px;
+
+  color: black;
+  width: 20vh;
+
+  height: min-content;
+}
+.footer-d2 {
+  margin: 10px;
+  font-size: small;
+  color: black;
+  width: 10vh;
+  font-size: x-large;
+  height: min-content;
+}
+.footer-d3 {
+  margin: 10px;
+  padding: 10;
+  color: black;
+  width: 20vh;
+  font-size: large;
+  height: min-content;
+  line-height: 2;
 }
 
-.whyBuyContainer{
-    display: flex;
-    color:'white';
-    padding:10px;
-    width:200vh;
-    background-size: 100% 100%;
-    
-}
-.whyBuyContainer div{
-    width:150vh;
-    padding:20px;
-   
+.about_part {
+  margin: 10px;
+  padding: 10;
+  color: black;
+  width: 70vh;
+  font-size: large;
+  height: min-content;
+  line-height: 2;
 }
 
-.select_car_{
-    color:black;
-    width:400px;
-    display: flex;
-    height: 70px;
-   padding-left: 30px;
-   padding-top: 10px;
+.whyBuyContainer {
+  display: flex;
+  color: "white";
+  padding: 10px;
+  width: 200vh;
+  background-size: 100% 100%;
+}
+.whyBuyContainer div {
+  width: 150vh;
+  padding: 20px;
+}
+
+.select_car_ {
+  color: black;
+  width: 400px;
+  display: flex;
+  height: 70px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.textHome {
+  font-size: 4rem;
+  margin: 2rem;
+  width: 20vw;
 }
 
 @media (max-width: 520px) {
-    .footer_container{ 
-     width:200vw;
-     height:120vh;
-    }
-  }  
+  .footer_container {
+    width: 100%;
+    height: 120vh;
+    font-size: smaller;
+    display: inline;
+  }
+  .Home {
+    height: 70vh;
+  }
+  .select_area {
+    padding-top: 100px;
+    width: 40%;
+    float: none;
+  }
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    justify-content: center;
+
+    padding-bottom: 0;
+    width: 20vw;
+    height: 40vh;
+    border-radius: 10px;
+    align-items: center;
+  }
+  .info-container span {
+    padding-top: 6.5rem;
+
+    height: 40vh;
+  }
+
+  .textHome {
+    font-size: 1.8rem;
+    width: 45vw;
+    height: 10vh;
+    display: block;
+    margin: 1rem;
+  }
+
+  .mainHome {
+    margin: 0.5rem;
+  }
+  .Home {
+    width: auto;
+  }
+  .whyBuyContainer {
+    display: flex;
+    flex-direction: column;
+    color: "white";
+    padding: 10px;
+    width: 100%;
+    background-size: 100% 100%;
+  }
+  .whyBuyContainer div {
+    width: 100%;
+  }
+  .about_part {
+    width: 100%;
+    font-size: small;
+  }
+  .footer-d3{
+    font-size: small;
+  }
+}

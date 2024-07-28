@@ -1,76 +1,71 @@
-.card-slider-conatiner{
-    width:100%;
-    height:100%;
-    
-    justify-content : center;
-   background-color: rgb(255, 255, 255);
-    position:absolute;
-    text-align: center;
-    padding-top: 100px;
+.card-slider-conatiner {
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  text-align: center;
+  padding-top: 100px;
 }
 
-.main-slider-contianer1{
-    width:210vh;
-    height:60vh;
-    position:relative;
-    display:flex;
-   background-color: rgb(240, 240, 240);
- margin: 10px;
-   
+.main-slider-contianer1 {
+  width: 60%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  background-color: rgb(240, 240, 240);
+  margin: 10px;
 }
-.slider{
-    width:100%;
-    height:100%;
-    padding: 20px;
-    text-align: center;
-}
-
-.main-slider-contianer1 button{
-    height: 70px;
-    margin: auto;
-    width:50px;
-    border: none;
+.slider {
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
 }
 
-
-.slider-icon.left:hover , .slider-icon.right:hover{
-    opacity:1;
-}
-.slider-icon.right{
-    float: inline-end;
-}
-
-.slider-card{
-    display:inline-block;
-    width:min-content;
-    height:min-content;
-    background:white;
-    border-radius:10px;
-    margin-left:5px;
-    margin-right:5px;
-    box-shadow: 5px 5px 1.25rem 0px rgb(0 0 0 / 12%);
-    position: relative;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 20px;
-    
+.main-slider-contianer1 button {
+  height: 70px;
+  margin: auto;
+  width: 30px;
+  border: none;
 }
 
-
-.slider{
-    width:100%;
-    height:100%;
-    white-space:nowrap;
-    overflow-x:scroll; 
-    scrollbar-width:none; 
-
-    scroll-behavior : smooth;
-    scroll-behavior: smooth;
+.slider-icon.left:hover,
+.slider-icon.right:hover {
+  opacity: 1;
+}
+.slider-icon.right {
+  float: inline-end;
 }
 
-
-
-.slider::-webkit-scrollbar{
-    display:none;
+.slider-card {
+  display: inline-block;
 }
 
+.slider {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .main-slider-contianer1 {
+    width: 90%;
+    height: min-content;
+    position: none;
+    display: block;
+ flex: none;
+    background-color: rgb(255, 250, 250);
+    margin: 10px;
+  }
+}

@@ -48,7 +48,7 @@ const CardSliders =({SelectedCategory,handleCardClick,handleFavCar})=>{
     return(
      
        <div className='main-slider-contianer1'>
-       {SelectedCategory=='used'?<Label as='a' color='yellow'  style={{height:"40px",width:'120px',margin:'20px'}} tag> <h4>{SelectedCategory}</h4> </Label>: <Label as='a' color={SelectedCategory=='featured'? 'red':'green'}  style={{height:"40px",width:'120px',margin:'20px'}} tag> <h4>{SelectedCategory}</h4> </Label> }
+       {SelectedCategory=='used'?<Label as='a' color='yellow'  style={{height:"10%",width:'120px',margin:"1px"}} tag className='tags'> {SelectedCategory} </Label>: <Label as='a' color={SelectedCategory=='featured'? 'red':'green'}  style={{height:"10%",width:'120px',margin:'1px'}} tag > {SelectedCategory} </Label> }
        <button className="slider-icon-left" onClick={(e)=>handlescrollLeft(e)}> <Icon name='chevron left'  size='large'/></button>
              <div className="slider" style={{scrollLeft:scrollcard}} ref={containerRef}>  
              {

@@ -18,19 +18,20 @@ const CarList = () => {
   const [selectCar, setSelectCar] = useState([]);
   const [CarData, setCarData] = useState([]);
   const dispatch = useDispatch();
-  const {  user } = useSelector(selectAuth);
-   const [loader, setLoader] = useState(false);
+  const { user } = useSelector(selectAuth);
+  const [loader, setLoader] = useState(false);
   const [categoryFlag, setCategoryFlag] = useState(false);
+  const [showSearchList, setshowSearchList] = useState(false);
   let nav = useNavigate();
 
   const fetchCarData = async () => {
     try {
-      setLoader(true)
+      setLoader(true);
       const response = await axios.get(
         "https://turbotraderapi.onrender.com/getCarsData"
       );
       setCarData(response.data);
-      setLoader(false)
+      setLoader(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -178,23 +179,40 @@ const CarList = () => {
   ];
   return (
     <>
-      <div className="button-container">
-        <button onClick={() => handleCategoryChange("featured")} className="b1">
-          Featured{" "}
-        </button>
-        <button onClick={() => handleCategoryChange("used")} className="b1">
-          Used{" "}
-        </button>
-        <button onClick={() => handleCategoryChange("upcoming")} className="b1">
-          {" "}
-          Upcoming{" "}
-        </button>
-        <button onClick={() => handleCategoryChange("all")} className="b1">
-          All{" "}
-        </button>
-        <button onClick={() => setCategoryFlag(false)} className="b1">
-          Resest
-        </button>
+      <div
+        className="searchCategoryMedia"
+        onClick={() => setshowSearchList(!showSearchList)}
+      >
+        search with category
+      </div>
+
+      <div
+        className={!showSearchList ? "button-container" : "button-container2"}
+      >
+        <div>
+          <button
+            onClick={() => handleCategoryChange("featured")}
+            className="b1"
+          >
+            Featured{" "}
+          </button>
+          <button onClick={() => handleCategoryChange("used")} className="b1">
+            Used{" "}
+          </button>
+          <button
+            onClick={() => handleCategoryChange("upcoming")}
+            className="b1"
+          >
+            {" "}
+            Upcoming{" "}
+          </button>
+          <button onClick={() => handleCategoryChange("all")} className="b1">
+            All{" "}
+          </button>
+          <button onClick={() => setCategoryFlag(false)} className="b1">
+            Resest
+          </button>
+        </div>
         <div className="s_container">
           <Input
             placeholder="enter car, brand, price"
@@ -225,6 +243,7 @@ const CarList = () => {
           />
         </aside>
       </div>
+
       <span>{searchTerm}</span>
 
       {categoryFlag ? (
@@ -254,27 +273,35 @@ const CarList = () => {
       ) : null}
 
       <div className="featured-container" id="showCar">
-        {loader?<div>
-          <Dimmer active>
-            <Loader inverted>Getting best cars for you</Loader>
-          </Dimmer>
-        </div>:null}
-        <CardSliders
-          SelectedCategory={"featured"}
-          handleCardClick={handleCardClick}
-          handleFavCar={handleFavCar}
-        />
-        <br></br>
-        <CardSliders
-          SelectedCategory={"used"}
-          handleCardClick={handleCardClick}
-          handleFavCar={handleFavCar}
-        />
-        <CardSliders
-          SelectedCategory={"upcoming"}
-          handleCardClick={handleCardClick}
-          handleFavCar={handleFavCar}
-        />
+        {loader ? (
+          <div>
+            <Dimmer active>
+              <Loader inverted>Getting best cars for you</Loader>
+            </Dimmer>
+          </div>
+        ) : null}
+        <div>
+          <CardSliders
+            SelectedCategory={"featured"}
+            handleCardClick={handleCardClick}
+            handleFavCar={handleFavCar}
+          />
+        </div>
+        <div>
+          <br></br>
+          <CardSliders
+            SelectedCategory={"used"}
+            handleCardClick={handleCardClick}
+            handleFavCar={handleFavCar}
+          />
+        </div>
+        <div>
+          <CardSliders
+            SelectedCategory={"upcoming"}
+            handleCardClick={handleCardClick}
+            handleFavCar={handleFavCar}
+          />
+        </div>
       </div>
 
       <div style={{ marginTop: "100px", padding: "10px" }}>

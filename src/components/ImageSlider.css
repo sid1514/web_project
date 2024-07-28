@@ -1,8 +1,7 @@
 .image-slider {
     display: flex;
     overflow: hidden;
-    /* Adjust as needed  width: 550px;*/
-    /* Adjust as needed  height: 350px; */
+   
     width: 60vh;
     height: 50vh;
     
@@ -13,4 +12,14 @@
   .visible {
     opacity: 1;
   }
-  
+  @media (max-width: 520px) {
+.image-slider {
+    display: flex;
+    overflow: hidden;
+   justify-content: center;
+    width: 30vh;
+    height: 30vh;
+    
+  }
+
+  }
