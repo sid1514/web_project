@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import CarCard from "./CarCard";
 import "./car.css";
-import { Input, Dropdown } from "semantic-ui-react";
+import { Input, Dropdown, Dimmer, Loader } from "semantic-ui-react";
 import { useState } from "react";
 import WhyFrom from "./WhyFrom";
 import axios from "axios";
@@ -19,16 +19,18 @@ const CarList = () => {
   const [CarData, setCarData] = useState([]);
   const dispatch = useDispatch();
   const {  user } = useSelector(selectAuth);
-  
+   const [loader, setLoader] = useState(false);
   const [categoryFlag, setCategoryFlag] = useState(false);
   let nav = useNavigate();
 
   const fetchCarData = async () => {
     try {
+      setLoader(true)
       const response = await axios.get(
         "https://turbotraderapi.onrender.com/getCarsData"
       );
       setCarData(response.data);
+      setLoader(false)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -88,7 +90,7 @@ const CarList = () => {
     dispatch(setNavigating(true));
     if (selectCar.length > 0) {
       sessionStorage.setItem("selectedcar", JSON.stringify(selectCar));
-      nav("./BookCar");
+      nav("/BookCar");
     }
   };
   const handleFavCar = async (car_brand) => {
@@ -252,6 +254,11 @@ const CarList = () => {
       ) : null}
 
       <div className="featured-container" id="showCar">
+        {loader?<div>
+          <Dimmer active>
+            <Loader inverted>Getting best cars for you</Loader>
+          </Dimmer>
+        </div>:null}
         <CardSliders
           SelectedCategory={"featured"}
           handleCardClick={handleCardClick}

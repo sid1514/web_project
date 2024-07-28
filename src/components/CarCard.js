@@ -7,15 +7,15 @@ const CarCard = ({car_image,car_brand,car_model,car_price,number_of_seats,handle
   let [owner,setOwner]=useState('1');
   const [featured, setFeatured] = useState(false);
 useEffect(()=>{
-  if(category=='used'){
+  if(category==='used'){
     setOwner('2nd Owner')
-  }else if(category=='featured' && owner!='2nd Owner'){
+  }else if(category==='featured' && owner!=='2nd Owner'){
     setFeatured(true);
   }
   else{
     setOwner('1st Owner')
   }
-})
+},[])
   
 return (
 <>
