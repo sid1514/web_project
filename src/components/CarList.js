@@ -18,8 +18,8 @@ const CarList = () => {
   const [selectCar, setSelectCar] = useState([]);
   const [CarData, setCarData] = useState([]);
   const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector(selectAuth);
-  const [LoginUserData, setLoginUser] = useState(user);
+  const {  user } = useSelector(selectAuth);
+  
   const [categoryFlag, setCategoryFlag] = useState(false);
   let nav = useNavigate();
 
@@ -94,7 +94,7 @@ const CarList = () => {
   const handleFavCar = async (car_brand) => {
     console.log(car_brand);
     setFavCar(CarData.filter((c) => c.car_brand.includes(car_brand)));
-    const userid = LoginUserData.userid;
+    const userid = user.userid;
     console.log(userid);
 
     //console.log(favoriteCars)

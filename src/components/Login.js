@@ -91,6 +91,8 @@ useEffect(() => {
         });
     } 
   } 
+
+
   
  return(
   <>
@@ -182,7 +184,7 @@ useEffect(() => {
       </Segment>
   
     </div>}
-    <span style={{'color':'white',width:"50%",fontSize:"40px"}}> 
+    <span style={{color:'white',width:"50%",fontSize:"40px",marginTop:"24rem"}} > 
        <p > <b>Login</b> to proceed and book your test drive</p> 
     </span>
 

@@ -9,13 +9,12 @@ function App() {
  
   
   return (
-    <div className="App" >
-      <GoogleOAuthProvider clientId="412495318560-oio09u8g8gs1rg2r5a0nesk1bd88gblh.apps.googleusercontent.com">
-     
-      <NavBar/>
-      <Routing/>
-      <Footer/>
-    </GoogleOAuthProvider> 
+    <div className="App">
+      <GoogleOAuthProvider clientId={process.env.REACT_CLIENT_ID}>
+        <NavBar />
+        <Routing />
+        <Footer />
+      </GoogleOAuthProvider>
     </div>
   );
 }
