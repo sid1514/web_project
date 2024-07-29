@@ -1,101 +1,180 @@
+.selected_carContainer {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  width: min-content;
+  height: 50vh;
+  border-radius: 5px;
+}
+.bookcar_container {
+  width: min-content;
+  height: 100vh;
+}
+.main_bookCar {
+  color: rgb(146, 34, 34);
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 10;
+  background-color: aliceblue;
+  padding-left: 10vh;
+  padding-top: 20vh;
+  padding-bottom: 40vh;
+  width: 220vh;
+  height: 100%;
+}
 
-.selected_carContainer{
-    color:rgb(0, 0, 0);
-    padding: 10px;
-    width:min-content;
-    height:50vh;
-    border-radius: 5px;
+.bookcar_image {
+  box-shadow: 2px 2px grey;
+  width: 60vh;
+  height: 40vh;
 }
-.bookcar_container{
-    width: min-content;
-    height: 100vh;
+
+.payment_details {
+  width: 40vh;
+  color: black;
+
+  margin: 5vh;
+  margin-bottom: 20px;
+  padding: 10px;
 }
-.main_bookCar{
-    color:rgb(146, 34, 34);
-    display :flex;
-   font-family:Arial, Helvetica, sans-serif;
-    padding-bottom: 10;
+
+.cars_details {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.119);
+  padding-left: 20px;
+  padding-bottom: 10px;
+  width: 69vh;
+  justify-content: 20px space-around;
+  margin-top: 5vh;
+}
+.card_team {
+  background-color: rgba(45, 40, 40, 0.879);
+
+  padding: 20px;
+  justify-content: space-around;
+  width: 300px;
+}
+.team_container {
+  display: flex;
+}
+.book_button {
+  background-color: orange;
+  color: aliceblue;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.fakeprice {
+  text-decoration: line-through;
+}
+.seg_pay {
+  width: 40vh;
+  margin: 2vh;
+  padding-bottom: 40vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  padding: 5vh;
+  align-items: center;
+}
+
+.contact_below {
+  font-size: 5vh;
+  border-radius: 20px;
+  margin: auto;
+  color: red;
+  font-weight: 800;
+  text-shadow: 2px 2px rgba(109, 97, 97, 0.358);
+}
+
+.form_query {
+  padding: 10vh;
+  background-color: rgba(0, 0, 0, 0.094);
+  margin-top: 10vh;
+  justify-content: space-between;
+  width: min-content;
+  height: min-content;
+  border-radius: 10%;
+}
+.book_button2 {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .main_bookCar {
+    color: rgb(146, 34, 34);
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+
     background-color: aliceblue;
-    padding-left:10vh;
+    padding-left: 4vh;
     padding-top: 20vh;
-    padding-bottom: 40vh;
-    width:220vh
-}
-
-.bookcar_image{
+    padding-bottom: 4vh;
+    width: 100%;
+  }
+  .BookImg {
     box-shadow: 2px 2px grey;
-    width:60vh;
-    height:40vh;
-}
-
-.payment_details{
-    width:40vh;
-    color:black;
-    top:60;
-   margin:5vh;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
-.cars_details{
-    color:black;
+    width: 30vh;
+    height: 20vh;
+  }
+  .bookcar_image {
+    box-shadow: 2px 2px grey;
+    width: 30vh;
+    height: 20vh;
+  }
+  .cars_details {
+    color: black;
     background-color: rgba(0, 0, 0, 0.119);
     padding-left: 20px;
     padding-bottom: 10px;
-   width:69vh;
+    width: 95%;
     justify-content: 20px space-around;
-    margin-top: 5vh;
-   
-}
-.card_team{
-    background-color: rgba(45, 40, 40, 0.879);
-   
-    padding:20px;
-    justify-content: space-around;
-    width:300px;
-}
-.team_container{
-    display: flex;
-}
-.book_button{
+    margin-top: 1rem;
+    height:max-content ;
+  }
+  .selected_carContainer {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    width: min-content;
+    height: 30%;
+    border-radius: 5px;
+    margin-bottom: 4rem;
+  }
+  .featureDetail{
+    height: max-content;
+    margin-bottom: 4rem;
+  }
+  .payment_details {
+    width: 80%;
+
+    color: black;
+
+    margin: 1rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: small;
+  }
+  .payment_details2 {
+    display: none;
+  }
+
+  .book_button {
     background-color: orange;
     color: aliceblue;
     border-radius: 5px;
     font-weight: 500;
-}
-
-.fakeprice{
-    text-decoration:line-through;
-}
-.seg_pay{
-    width:40vh;
-    margin:2vh;
-    padding-bottom: 40vh;
-    background-color: rgb(255, 255, 255);
-    border-radius: 6px;
-    padding: 5vh;
-    align-items: center;
-    
-}
-
-.contact_below{
-   font-size: 5vh;
-    border-radius: 20px;
-    margin: auto;
-    color: red;
-    font-weight: 800;
-    text-shadow: 2px 2px rgba(109, 97, 97, 0.358);
-
-}
-
-.form_query{
-    padding: 10vh;
-    background-color: rgba(0, 0, 0, 0.094);
-    margin-top: 10vh;
-    justify-content: space-between;
-    width: min-content;
-    height: min-content;
-    border-radius: 10%;
-   
-    
+    width: 50%;
+    font-size: smaller;
+  }
+  .book_button2 {
+    display: block;
+    background-color: orange;
+    color: aliceblue;
+    border-radius: 5px;
+    font-weight: 500;
+    width: 50%;
+    font-size: smaller;
+    border: 0;
+    box-shadow: 2px 2px rgba(109, 97, 97, 0.358);
+    margin-bottom: 4rem;
+  }
 }
