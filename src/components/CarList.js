@@ -95,10 +95,10 @@ const CarList = () => {
     }
   };
   const handleFavCar = async (car_brand) => {
-    console.log(car_brand);
+    //console.log(car_brand);
     setFavCar(CarData.filter((c) => c.car_brand.includes(car_brand)));
-    const userid = user.userid;
-    console.log(userid);
+    const userid = user._id;
+    //console.log(userid);
 
     //console.log(favoriteCars)
 

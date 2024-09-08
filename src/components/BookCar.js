@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Bookcar.css'
-import {  Icon,Form ,Input,TextArea,Button, Header} from 'semantic-ui-react';
+import {  Icon} from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
 
 import { selectAuth } from "./LoginSlice";
@@ -30,9 +30,9 @@ setInterval(function(){
 
 const handleBookButton=async()=>{
    if (isAuthenticated) {
-      const userid = user.userid;
+      const userid = user._id;
     const bookedCar = selectCar[0];
-        const response = await axios.post(`https://turbotraderapi.onrender.com/bookedCar`, {
+        await axios.post(`https://turbotraderapi.onrender.com/bookedCar`, {
           userid: userid,
           bookedCar: bookedCar
         });

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
@@ -10,7 +10,6 @@ import {
   Divider,
   Segment,
   Icon,
-  Image,
 } from "semantic-ui-react";
 import "./Login.css";
 import { useDispatch } from "react-redux";
@@ -26,27 +25,14 @@ const Login = () => {
   let nav = useNavigate();
   const [msg, Setmsg] = useState(false);
   let [f, Setf] = useState(true);
-  let [contain, setContain] = useState([]);
-  let [loginData, setLoginData] = useState([]);
- 
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    try {
-      fetch(`https://turbotraderapi.onrender.com/getLoginData`)
-        .then((res) => res.json())
-        .then((temp) => setLoginData(temp))
-        .catch((e) => console.log(e));
-    } catch (error) {
-      console.error("Error fetching login data:", error);
-    }
-  }, []);
+  const dispatch = useDispatch();
 
   const handleFlag = () => {
     Setflag(!flag);
   };
 
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
   const handleSuccess = (response) => {
     console.log(response);
   };
@@ -55,33 +41,29 @@ const Login = () => {
     console.log("Login Failed");
   };
 
-  const handleSignUp = () => {
-    const max = loginData.reduce((maxValue, currentObject) => {
-      return Math.max(maxValue, currentObject.userid);
-    }, -Infinity);
-    console.log(max);
-    const userid = max + 1;
-    axios.post(`https://turbotraderapi.onrender.com/signUp`, {
-      userid,
-      username,
-      userpass,
-      phoneNumber,
-      userEmail,
-    });
-    Setflag(!flag);
+  const handleSignUp = async () => {
+    try {
+      await axios.post(`https://turbotraderapi.onrender.com/signUp`, {
+        username,
+        userpass,
+        phoneNumber,
+        userEmail,
+      });
+      Setflag(!flag);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     if (username !== "" && userpass !== "") {
-      axios
+      await axios
         .post(`https://turbotraderapi.onrender.com/signIn`, {
           username,
           userpass,
         })
         .then((res) => {
-          setContain(res);
-          console.log(res);
-
+          console.log(res)
           dispatch(login(res.data));
 
           if (res.data !== null) {
