@@ -3,7 +3,7 @@
   height: 40%;
   transition: transform 0.3s;
   box-shadow: 3px 3px 3px 3px rgba(2, 1, 1, 0.38);
-  width: 90%;
+  width: 100%;
   color: black;
   display: flex;
   flex-direction: column;
@@ -31,35 +31,26 @@
   height: 60px;
 }
 .featured-container {
-  display: flex;
-  flex-wrap: wrap;
+  
+
   margin: 10px;
   padding: 20px;
   text-align: center;
 
   height: auto;
-  width: 200vh;
+  width: 100%;
   background-color: rgb(255, 255, 255);
 }
 
-.cars_section1 {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgb(186, 201, 215);
-  border-bottom: 1px black;
-}
-.cars_section2 {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgb(186, 201, 215);
-  border-bottom: 1px black;
-}
+.cars_section1,
+.cars_section2,
 .cars_section3 {
   display: flex;
-  flex-wrap: wrap;
+
   background-color: rgb(186, 201, 215);
   border-bottom: 1px black;
 }
+
 #f-title {
   color: aliceblue;
   font-family: "Times New Roman", Times, serif;
