@@ -27,17 +27,16 @@ function NavBar() {
           navbarIcon ? "menu-link mobile-menu-link" : "navbar_container"
         }
       >
-        <h1 id="title">Turbo Trader</h1>
+        <h2 id="title">Turbo Trader</h2>
         <ul className={flag ? "ul_nav" : "ul_nav2"}>
           <li>
-            <NavLink to="/">
-              <h2
-                onClick={() => {
-                  setF(true);
-                }}
-              >
-                Home
-              </h2>
+            <NavLink
+              to="/"
+              onClick={() => {
+                setF(true);
+              }}
+            >
+              <h3>Home</h3>
             </NavLink>
           </li>
           <li>
@@ -47,7 +46,7 @@ function NavBar() {
                 setF(false);
               }}
             >
-              <h2>About US</h2>
+              <h3>About US</h3>
             </NavLink>
           </li>
           <li>
@@ -57,7 +56,7 @@ function NavBar() {
                 setF(false);
               }}
             >
-              <h2>Contact</h2>
+              <h3>Contact</h3>
             </NavLink>
           </li>
           <li>
@@ -68,11 +67,11 @@ function NavBar() {
               }}
             >
               {isAuthenticated ? (
-                <h2>
+                <h3>
                   <Icon name="user"></Icon>Your account
-                </h2>
+                </h3>
               ) : (
-                <h2>Login / Sign up</h2>
+                <h3>Login / Sign up</h3>
               )}
             </NavLink>
           </li>

@@ -21,13 +21,13 @@ const Footer = () => {
         <div className="footer-d2">
           Follow Us:
           <p>
-            <Icon name="facebook" />
+            <Icon name="facebook" size="small" />
           </p>
           <p>
-            <Icon name="twitter" />{" "}
+            <Icon name="twitter" size="small" />{" "}
           </p>
           <p>
-            <Icon name="whatsapp square" />
+            <Icon name="whatsapp square" size="small" />
           </p>
         </div>
 
