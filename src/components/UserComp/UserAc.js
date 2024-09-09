@@ -4,12 +4,12 @@ import { Button, Icon } from "semantic-ui-react";
 import { useNavigate } from "react-router-dom";
 
 import { useEffect } from "react";
-import CarCard from "./CarCard";
+import CarCard from "../carLists/CarCard";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { logout } from "./LoginSlice";
-import { selectAuth } from "./LoginSlice";
+
 import { useSelector } from "react-redux";
+import { logout, selectAuth } from "../Auth/LoginSlice";
 
 const UserAc = () => {
   const [BookedCars, setBookedCars] = useState(false);
@@ -46,7 +46,7 @@ const UserAc = () => {
       const { data } = await axios.get(
         `https://turbotraderapi.onrender.com/getBookedCar/${userid}`
       );
-
+      console.log(data);
       setBookedCarDetails(data);
       //bookedCarDetails.push(data);
     } catch (error) {

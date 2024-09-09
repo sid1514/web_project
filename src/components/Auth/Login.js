@@ -13,8 +13,9 @@ import {
 } from "semantic-ui-react";
 import "./Login.css";
 import { useDispatch } from "react-redux";
-import { login } from "./LoginSlice";
+
 import { GoogleLogin } from "@react-oauth/google";
+import { login } from "./LoginSlice";
 
 const Login = () => {
   let [flag, Setflag] = useState(true);
@@ -63,7 +64,7 @@ const Login = () => {
           userpass,
         })
         .then((res) => {
-          console.log(res)
+          console.log(res);
           dispatch(login(res.data));
 
           if (res.data !== null) {

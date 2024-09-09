@@ -3,14 +3,16 @@ import CarCard from "./CarCard";
 import "./car.css";
 import { Input, Dropdown, Dimmer, Loader } from "semantic-ui-react";
 import { useState } from "react";
-import WhyFrom from "./WhyFrom";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import CardSliders from "./CardSlider";
-import { selectAuth } from "./LoginSlice";
+import CardSliders from "./CarsSlider/CardSlider";
+
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setNavigating } from "./LoginSlice";
+
+import WhyFrom from "../FooterContact/WhyFrom";
+import { selectAuth, setNavigating } from "../Auth/LoginSlice";
 const CarList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");

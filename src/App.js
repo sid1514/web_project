@@ -1,9 +1,9 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import Routing from "./Routing";
-import { useSelector } from "react-redux";
+
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import NavBar from "./components/Dashboard/NavBar";
+import Routing from "./Routing";
+import Footer from "./components/FooterContact/Footer";
 function App() {
   return (
     <div className="App">

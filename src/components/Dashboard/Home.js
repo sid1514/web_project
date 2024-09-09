@@ -1,27 +1,22 @@
 import "./Home.css";
-import CarList from "./CarList";
 
-import HomeImageSlider from "./ImageSlider";
-import { useSelector } from "react-redux";
 import { lazy, Suspense } from "react";
+import HomeImageSlider from "./ImageSlider";
 
 const Home = () => {
-  const auth = useSelector((state) => state.auth);
-  const CarList = lazy(() => import("./CarList"));
+  // const auth = useSelector((state) => state.auth);
+  const CarList = lazy(() => import("../carLists/CarList"));
 
   return (
     <>
       <div style={{ margin: "10px" }} className="mainHome">
         <div className="Home">
-         
           <div className="info-container">
             <span>
               <HomeImageSlider />
             </span>
             <span>
-              <p
-               
-              className="textHome">
+              <p className="textHome">
                 Rev up your dreams with{" "}
                 <b
                   style={{

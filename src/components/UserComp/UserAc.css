@@ -1,0 +1,48 @@
+.main_userAc {
+  display: flex;
+  color: rgb(3, 7, 11);
+  padding-top: 150px;
+  padding-left: 100px;
+  height: max-content;
+  background-color: rgb(25, 54, 54);
+}
+.user_container {
+  color: rgb(9, 0, 0);
+  margin-right: 90px;
+  text-align: left;
+}
+.profile_image {
+  width: 145px;
+  height: 170px;
+  margin: 20px;
+  background-color: rgb(231, 231, 232);
+  border-radius: 20%;
+  padding: 10px;
+}
+.user_container button {
+  width: 130px;
+  border: none;
+
+  box-shadow: 2px 1px 1px 1px rgba(46, 37, 37, 0.189);
+  color: rgb(255, 255, 255);
+  background-color: rgb(23, 35, 68);
+}
+
+.user_container button:hover {
+  background-color: rgba(12, 34, 63, 0.36);
+}
+.userAcContainer {
+  color: rgb(0, 0, 0);
+}
+.user_Info {
+  margin-left: 70px;
+  margin-top: 50px;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+.favorietCarContainer {
+  padding-top: 40px;
+}
+.bookedCar_Container {
+  padding-top: 40px;
+}
